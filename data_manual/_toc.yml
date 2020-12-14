@@ -1,0 +1,10 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: docs/010/010intro
+- file: docs/020/020work
+  sections:
+    - file: docs/020/021work_eg1
+- file: docs/030/030task
+  sections:
+    - file: docs/030/031task1
