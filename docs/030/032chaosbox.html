@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chaos Lab Data Manual &#8212; Chaos Lab Data Manual</title>
+    <title>Connect to Chaosbox &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Work" href="../020/020work.html" />
+    <link rel="next" title="Install Docker on OIT Server" href="033install_docker.html" />
+    <link rel="prev" title="Connect to Princeton OIT Server" href="031connect_oit.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -84,13 +85,13 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../010/010intro.html">
    Chaos Lab Data Manual
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../020/020work.html">
    Work
@@ -105,38 +106,38 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../030/030task.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="030task.html">
    Task
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/031connect_oit.html">
+    <a class="reference internal" href="031connect_oit.html">
      Connect to Princeton OIT Server
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../030/032chaosbox.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Connect to Chaosbox
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/033install_docker.html">
+    <a class="reference internal" href="033install_docker.html">
      Install Docker on OIT Server
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/034backup_influx.html">
+    <a class="reference internal" href="034backup_influx.html">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/035restore_influx.html">
+    <a class="reference internal" href="035restore_influx.html">
      Restore data to InfluxDB 1.8
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/036access_influx.html">
+    <a class="reference internal" href="036access_influx.html">
      Access InfluxDB
     </a>
    </li>
@@ -184,7 +185,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/010/010intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/032chaosbox.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -204,7 +205,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/010/010intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/032chaosbox.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -232,11 +233,17 @@
         
               <div>
                 
-  <div class="section" id="chaos-lab-data-manual">
-<h1>Chaos Lab Data Manual<a class="headerlink" href="#chaos-lab-data-manual" title="Permalink to this headline">¶</a></h1>
-<p>This is the Chaos Lab Data Manual. For all your data needs refer to this manual. This manual is divided into 2 main chapters Work and Task. Work examples are processes that requires the execution of multiple tasks.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="connect-to-chaosbox">
+<h1>Connect to Chaosbox<a class="headerlink" href="#connect-to-chaosbox" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>For windows 10 user, you have to first install the openssh client. Go to start and search for Apps &amp; features -&gt; Manage optional features -&gt; Add a feature -&gt; OpenSSH Server. For Mac users, this is not required.</p></li>
+<li><p>Once installed, go to the terminal and type in this command. Get the username and password from Forrest or Kian Wee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">username</span><span class="nd">@chaosbox</span><span class="o">.</span><span class="n">princeton</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
 </div>
+<p>a. If it is your first time connecting to chaosbox you will be asked if you want to continue connecting. Type in “yes”.</p>
+</li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -252,7 +259,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs\010"
+            path: "./docs\030"
         },
         predefinedOutput: true
     }
@@ -267,7 +274,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="../020/020work.html" title="next page">Work</a>
+    <a class='left-prev' id="prev-link" href="031connect_oit.html" title="previous page">Connect to Princeton OIT Server</a>
+    <a class='right-next' id="next-link" href="033install_docker.html" title="next page">Install Docker on OIT Server</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
