@@ -7,4 +7,9 @@
     - file: docs/020/021work_eg1
 - file: docs/030/030task
   sections:
-    - file: docs/030/031task1
+    - file: docs/030/031connect_oit
+    - file: docs/030/032chaosbox
+    - file: docs/030/033install_docker
+    - file: docs/030/034backup_influx
+    - file: docs/030/035restore_influx
+    - file: docs/030/036access_influx

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workflows &#8212; Chaos Lab Data Manual</title>
+    <title>Instructions to Backup Influxdb 1.2 (installed on chaosbox) &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Workflow Example 1" href="021work_eg1.html" />
-    <link rel="prev" title="Chaos Lab Data Manual" href="../010/010intro.html" />
+    <link rel="next" title="Restore data to InfluxDB 1.8" href="035restore_influx.html" />
+    <link rel="prev" title="Install Docker on OIT Server" href="033install_docker.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,52 +92,52 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="current reference internal" href="#">
-   Workflows
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../020/020work.html">
+   Work
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="021work_eg1.html">
-     Workflow Example 1
+    <a class="reference internal" href="../020/021work_eg1.html">
+     Work Example 1
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../030/030task.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="030task.html">
    Task
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/031connect_oit.html">
+    <a class="reference internal" href="031connect_oit.html">
      Connect to Princeton OIT Server
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/032chaosbox.html">
+    <a class="reference internal" href="032chaosbox.html">
      Connect to Chaosbox
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/033install_docker.html">
+    <a class="reference internal" href="033install_docker.html">
      Install Docker on OIT Server
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../030/034backup_influx.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/035restore_influx.html">
+    <a class="reference internal" href="035restore_influx.html">
      Restore data to InfluxDB 1.8
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/036access_influx.html">
+    <a class="reference internal" href="036access_influx.html">
      Access InfluxDB
     </a>
    </li>
@@ -185,7 +185,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/020/020work.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/034backup_influx.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -205,7 +205,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/020work.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/034backup_influx.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -233,11 +233,41 @@
         
               <div>
                 
-  <div class="section" id="workflows">
-<h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline">¶</a></h1>
-<p>Under construction …</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="instructions-to-backup-influxdb-1-2-installed-on-chaosbox">
+<h1>Instructions to Backup Influxdb 1.2 (installed on chaosbox)<a class="headerlink" href="#instructions-to-backup-influxdb-1-2-installed-on-chaosbox" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Connect to Chaosbox <a class="reference internal" href="032chaosbox.html"><span class="doc">Connect to Chaosbox</span></a>.</p></li>
+<li><p>Create a directory for the back up by making a directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">chaos</span><span class="o">/</span><span class="n">influx_backup</span>
+</pre></div>
 </div>
+<p>a. Create a new folder for the metastore and each database. metastore, csvtest, everything, gpstest, iaq, internal, mrt, particles, siemens, test, weather</p>
+</li>
+<li><p>Backup the metastore. The InfluxDB’s metastore contains internal information about the status of the system, including user information, database/shard metadata, CQs, RPs, and subscriptions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo influxd backup /home/chaos/influx_backup/metastore
+</pre></div>
+</div>
+</li>
+<li><p>Backup each database with the following command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo influxd backup -database &lt;database name&gt; &lt;backup path&gt;
+
+Example:
+$ sudo influxd backup -database everything /home/chaos/influx_backup/everything
+</pre></div>
+</div>
+</li>
+<li><p>Once you have backup all database zip the folder. Zip the backup folder by typing in the command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo zip -r ifbu_yyyymmdd.zip /home/chaos/influx_backup
+</pre></div>
+</div>
+</li>
+<li><p>Logout of Chaosbox. Use the scp command to download the zipfile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ scp chaos@chaosbox.princeton.edu:/home/chaos/ifbu_20200713.zip C:\test\
+</pre></div>
+</div>
+</li>
+<li><p>Upload the zip file to the Chaos Research Google Drive “Chaos Research/influx_backup”</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -253,7 +283,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs\020"
+            path: "./docs\030"
         },
         predefinedOutput: true
     }
@@ -268,8 +298,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../010/010intro.html" title="previous page">Chaos Lab Data Manual</a>
-    <a class='right-next' id="next-link" href="021work_eg1.html" title="next page">Workflow Example 1</a>
+    <a class='left-prev' id="prev-link" href="033install_docker.html" title="previous page">Install Docker on OIT Server</a>
+    <a class='right-next' id="next-link" href="035restore_influx.html" title="next page">Restore data to InfluxDB 1.8</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
