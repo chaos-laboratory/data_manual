@@ -1,7 +1,7 @@
 # Access InfluxDB
 
 ## Install influxDB
-You can either install influxDB following the instructions [here](https://portal.influxdata.com/downloads/) or run it with Docker. Install Docker following these [instructions](https://docs.docker.com/engine/install/debian/).
+You can either install influxDB following the instructions [here](https://portal.influxdata.com/downloads/) or run it with Docker. Install Docker following these [instructions](https://docs.docker.com/engine/install/debian/). Once Docker is installed. Run a Docker container with this command.
 
 
     $ sudo docker run -d --name influxdb influxdb:1.8.3
@@ -67,7 +67,7 @@ You can then get into the container to access InfluxDB by using this command.
     ```
 12. We will now look at all the data that has location = ‘ColdTube’. Type in the command below.
     ```
-    select * from chaos where location='ColdTube' limit 10”
+    select * from chaos where location='ColdTube' limit 10
     ```
 13. Now let’s filter the data with two where AND statement. Type in the following command.
     ```

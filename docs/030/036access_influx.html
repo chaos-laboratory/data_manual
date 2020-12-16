@@ -93,12 +93,12 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../020/020work.html">
-   Work
+   Workflows
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../020/021work_eg1.html">
-     Work Example 1
+     Workflow Example 1
     </a>
    </li>
   </ul>
@@ -250,7 +250,7 @@
 <h1>Access InfluxDB<a class="headerlink" href="#access-influxdb" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-influxdb">
 <h2>Install influxDB<a class="headerlink" href="#install-influxdb" title="Permalink to this headline">¶</a></h2>
-<p>You can either install influxDB following the instructions <a class="reference external" href="https://portal.influxdata.com/downloads/">here</a> or run it with Docker. Install Docker following these <a class="reference external" href="https://docs.docker.com/engine/install/debian/">instructions</a>.</p>
+<p>You can either install influxDB following the instructions <a class="reference external" href="https://portal.influxdata.com/downloads/">here</a> or run it with Docker. Install Docker following these <a class="reference external" href="https://docs.docker.com/engine/install/debian/">instructions</a>. Once Docker is installed. Run a Docker container with this command.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo docker run -d --name influxdb influxdb:1.8.3
 </pre></div>
 </div>
@@ -314,7 +314,7 @@ to query with tag keys and values</p>
 </div>
 </li>
 <li><p>We will now look at all the data that has location = ‘ColdTube’. Type in the command below.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>select * from chaos where location=&#39;ColdTube&#39; limit 10”
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">chaos</span> <span class="n">where</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;ColdTube&#39;</span> <span class="n">limit</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </li>
