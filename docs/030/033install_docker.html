@@ -55,7 +55,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Instructions to Backup Influxdb 1.2 (installed on chaosbox)" href="034backup_influx.html" />
+    <link rel="next" title="Downloading Docker Image Locally" href="034local_dimage.html" />
     <link rel="prev" title="Connect to Chaosbox" href="032chaosbox.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -94,12 +94,12 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../020/020work.html">
-   Work
+   Workflows
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../020/021work_eg1.html">
-     Work Example 1
+     Workflow Example 1
     </a>
    </li>
   </ul>
@@ -108,7 +108,7 @@
  </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="030task.html">
-   Task
+   Tasks
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
@@ -127,18 +127,27 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="034backup_influx.html">
+    <a class="reference internal" href="034local_dimage.html">
+     Downloading Docker Image Locally
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="035backup_influx.html">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
     </a>
    </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../040/040appendix.html">
+   Appendix
+  </a>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="035restore_influx.html">
-     Restore data to InfluxDB 1.8
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="036access_influx.html">
-     Access InfluxDB
+    <a class="reference internal" href="../040/influx_dbs.html">
+     Information on the databases in InfluxDB (Chaos Legacy DB)
     </a>
    </li>
   </ul>
@@ -226,6 +235,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternative-you-can-install-docker-with-the-packages">
+   Alternative you can install Docker with the packages
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -237,8 +260,49 @@
 <h1>Install Docker on OIT Server<a class="headerlink" href="#install-docker-on-oit-server" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
 <li><p>You will need to first add the necessary repository to the server. Talk to the OIT in charge to help you add new repository to the server.</p></li>
-<li><p>Install Docker with the following command.</p></li>
 </ol>
+<div class="section" id="alternative-you-can-install-docker-with-the-packages">
+<h2>Alternative you can install Docker with the packages<a class="headerlink" href="#alternative-you-can-install-docker-with-the-packages" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Check the distribution of the server. I have check it, it is running Oracle Linux Server 7.9. The closest distribution to it is the CentOS distribution. As a result, we will use the rpm packages for CentOS 7 Server.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /etc/os-release
+</pre></div>
+</div>
+</li>
+<li><p>Download the rpm packages <a class="reference external" href="https://download.docker.com/linux/centos/7/x86_64/stable/Packages/">here</a>. Choose the latest stable distribution. You will need to download 4 packages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">cli</span>
+<span class="n">containerd</span><span class="o">.</span><span class="n">io</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">rootless</span><span class="o">-</span><span class="n">extras</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">ce</span>
+</pre></div>
+</div>
+</li>
+<li><p>Once downloaded you can copy the rpm packages from your local machine to the OIT server with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scp</span> <span class="n">C</span><span class="p">:</span>\<span class="n">users</span>\<span class="n">userX</span>\<span class="n">Download</span>\<span class="n">x</span><span class="o">.</span><span class="n">rpm</span> <span class="n">userid</span><span class="nd">@andlchaos300l</span><span class="o">.</span><span class="n">princeton</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>You will need to install two extra dependencies <a class="reference external" href="https://pkgs.org/">from</a>. Search for these two packages and then again copy them to the server.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fuse3</span><span class="o">-</span><span class="n">libs</span>
+<span class="n">fuse</span><span class="o">-</span><span class="n">overlayfs</span> <span class="mf">0.7</span>
+<span class="n">slirp4netns</span> <span class="mf">0.4</span>
+</pre></div>
+</div>
+</li>
+<li><p>Then install the 4 packages in this sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">cli</span>
+<span class="mf">2.</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">containerd</span><span class="o">.</span><span class="n">io</span>
+<span class="mf">3.</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">rootless</span><span class="o">-</span><span class="n">extras</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span>
+</pre></div>
+</div>
+</li>
+<li><p>Once everyhting is install. Run Docker service with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">docker</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -270,7 +334,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="032chaosbox.html" title="previous page">Connect to Chaosbox</a>
-    <a class='right-next' id="next-link" href="034backup_influx.html" title="next page">Instructions to Backup Influxdb 1.2 (installed on chaosbox)</a>
+    <a class='right-next' id="next-link" href="034local_dimage.html" title="next page">Downloading Docker Image Locally</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
