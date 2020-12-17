@@ -10,6 +10,11 @@
     - file: docs/030/031connect_oit
     - file: docs/030/032chaosbox
     - file: docs/030/033install_docker
-    - file: docs/030/034backup_influx
-    - file: docs/030/035restore_influx
-    - file: docs/030/036access_influx
+    - file: docs/030/034local_dimage
+    - file: docs/030/035backup_influx
+    - file: docs/030/036restore_influx
+    - file: docs/030/037access_influx
+
+- file: docs/040/040appendix
+  sections:
+     - file: docs/040/influx_dbs
