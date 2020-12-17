@@ -126,18 +126,13 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/034backup_influx.html">
+    <a class="reference internal" href="../030/034local_dimage.html">
+     Downloading Docker Image Locally
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../030/035backup_influx.html">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../030/035restore_influx.html">
-     Restore data to InfluxDB 1.8
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../030/036access_influx.html">
-     Access InfluxDB
     </a>
    </li>
   </ul>
@@ -248,7 +243,24 @@
                 
   <div class="section" id="information-on-the-databases-in-influxdb-chaos-legacy-db">
 <h1>Information on the databases in InfluxDB (Chaos Legacy DB)<a class="headerlink" href="#information-on-the-databases-in-influxdb-chaos-legacy-db" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">everything</span> <span class="o">-</span>
+<p>This document information on the various databases on the old InfluxDB</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Database</span>
+<span class="o">|</span>
+<span class="o">|---</span><span class="n">everything</span>
+        <span class="o">|</span>
+        <span class="o">|---</span><span class="n">Measurements</span>
+                <span class="o">|</span>
+                <span class="o">|---</span><span class="nb">all</span>
+                <span class="o">|</span>     <span class="o">|---</span><span class="n">There</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">total</span> <span class="n">only</span> <span class="mi">281</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+                <span class="o">|</span>
+                <span class="o">|---</span><span class="n">chaos</span>
+                <span class="o">|</span>     <span class="o">|---</span><span class="n">There</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">total</span> <span class="n">only</span> <span class="mi">354308942</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+                <span class="o">|</span>
+                <span class="o">|---</span><span class="n">firmware</span>
+                <span class="o">|</span>     <span class="o">|---</span><span class="n">There</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">total</span> <span class="n">only</span> <span class="mi">878</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
+                <span class="o">|</span>
+                <span class="o">|---</span><span class="n">test</span>
+                      <span class="o">|---</span><span class="n">There</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">total</span> <span class="n">only</span> <span class="mi">64</span> <span class="n">data</span> <span class="n">points</span><span class="o">.</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">csvtest</span> <span class="o">-</span>
@@ -272,7 +284,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">-</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">-</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span> <span class="o">-</span>
 </pre></div>
 </div>
 </div>

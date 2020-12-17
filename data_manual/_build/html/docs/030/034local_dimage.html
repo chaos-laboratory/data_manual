@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connect to Princeton OIT Server &#8212; Chaos Lab Data Manual</title>
+    <title>Downloading Docker Image Locally &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Connect to Chaosbox" href="032chaosbox.html" />
-    <link rel="prev" title="Tasks" href="030task.html" />
+    <link rel="next" title="Instructions to Backup Influxdb 1.2 (installed on chaosbox)" href="035backup_influx.html" />
+    <link rel="prev" title="Install Docker on OIT Server" href="033install_docker.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -111,8 +111,8 @@
    Tasks
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="031connect_oit.html">
      Connect to Princeton OIT Server
     </a>
    </li>
@@ -126,8 +126,8 @@
      Install Docker on OIT Server
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="034local_dimage.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Downloading Docker Image Locally
     </a>
    </li>
@@ -194,7 +194,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/030/031connect_oit.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/034local_dimage.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -214,7 +214,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/031connect_oit.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/034local_dimage.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -242,22 +242,18 @@
         
               <div>
                 
-  <div class="section" id="connect-to-princeton-oit-server">
-<h1>Connect to Princeton OIT Server<a class="headerlink" href="#connect-to-princeton-oit-server" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="downloading-docker-image-locally">
+<h1>Downloading Docker Image Locally<a class="headerlink" href="#downloading-docker-image-locally" title="Permalink to this headline">¶</a></h1>
 <ol>
-<li><p>You need to get your PUID as a user on the server. Talk to Forrest or Kian Wee.</p></li>
-<li><p>Enable unix access for your PUID <a class="reference external" href="https://fed.princeton.edu/cas/login;jsessionid=3F1F014CD7E5D83F65CA9E2495AD1EB5?locale=en&amp;service=https%3a%2f%2feisess200l.Princeton.EDU%2fcgi-bin%2fShell%2fnview.pl">here</a>.</p></li>
-<li><p>Once enabled, you will be able to log into the server with ssh. One must be in the Princeton campus or vpn to the Princeton network to log into the server.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">your_puid</span><span class="nd">@andlchaos300l</span><span class="o">.</span><span class="n">princeton</span><span class="o">.</span><span class="n">edu</span>
+<li><p>Download Docker image with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker save fraunhoferiosb/frost-server:latest &gt; frost-server.tar
 </pre></div>
 </div>
 </li>
-<li><p>To get root access, get a software/hardware token (USD 60/ 132) from <a class="reference external" href="https://princeton.service-now.com/service/?id=sc_cat_item&amp;sys_id=a8f092884f569e00f56c0ad14210c791">here</a>.</p></li>
-<li><p>Once you get your RSA token setup remember your pin when you setup your token. Use the command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">su</span> <span class="o">-</span> <span class="n">root</span>
+<li><p>Load the image with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker load -i frost-server.tar
 </pre></div>
 </div>
-<p>a. Then enter your pin (the pin you use when setting up your RSA token) plus the passcode on your token. For e.g. if your pin is 123456 and the RSA passcode is 654321, your passcode is 123456654321</p>
 </li>
 </ol>
 </div>
@@ -290,8 +286,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="030task.html" title="previous page">Tasks</a>
-    <a class='right-next' id="next-link" href="032chaosbox.html" title="next page">Connect to Chaosbox</a>
+    <a class='left-prev' id="prev-link" href="033install_docker.html" title="previous page">Install Docker on OIT Server</a>
+    <a class='right-next' id="next-link" href="035backup_influx.html" title="next page">Instructions to Backup Influxdb 1.2 (installed on chaosbox)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
