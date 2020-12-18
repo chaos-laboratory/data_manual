@@ -14,7 +14,7 @@
     - file: docs/030/035backup_influx
     - file: docs/030/036restore_influx
     - file: docs/030/037access_influx
-
+    - file: docs/030/038ssl_cert
 - file: docs/040/040appendix
   sections:
      - file: docs/040/influx_dbs
