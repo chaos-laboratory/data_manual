@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instructions to Backup Influxdb 1.2 (installed on chaosbox) &#8212; Chaos Lab Data Manual</title>
+    <title>Move Docker Data Folder to /app Folder &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Restore data to InfluxDB 1.8" href="036restore_influx.html" />
-    <link rel="prev" title="Downloading Docker Image Locally" href="034local_dimage.html" />
+    <link rel="next" title="Appendix" href="../040/040appendix.html" />
+    <link rel="prev" title="Request for SSL Certificate from Princeton" href="038ssl_cert.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -131,8 +131,8 @@
      Downloading Docker Image Locally
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="035backup_influx.html">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
     </a>
    </li>
@@ -151,8 +151,8 @@
      Request for SSL Certificate from Princeton
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="039mv_dockervar.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Move Docker Data Folder to /app Folder
     </a>
    </li>
@@ -214,7 +214,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/030/035backup_influx.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/039mv_dockervar.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -234,7 +234,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/035backup_influx.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/039mv_dockervar.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -262,40 +262,38 @@
         
               <div>
                 
-  <div class="section" id="instructions-to-backup-influxdb-1-2-installed-on-chaosbox">
-<h1>Instructions to Backup Influxdb 1.2 (installed on chaosbox)<a class="headerlink" href="#instructions-to-backup-influxdb-1-2-installed-on-chaosbox" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="move-docker-data-folder-to-app-folder">
+<h1>Move Docker Data Folder to /app Folder<a class="headerlink" href="#move-docker-data-folder-to-app-folder" title="Permalink to this headline">¶</a></h1>
+<p>This task is based on instructions <a class="reference external" href="https://www.guguweb.com/2019/02/07/how-to-move-docker-data-directory-to-another-location-on-ubuntu/">here</a>. We need more space as the /var directory only has 5gb of space. Make sure you have log in as root as shown here <a class="reference internal" href="031connect_oit.html"><span class="doc">Connect to Princeton OIT Server</span></a></p>
 <ol>
-<li><p>Connect to Chaosbox <a class="reference internal" href="032chaosbox.html"><span class="doc">Connect to Chaosbox</span></a>.</p></li>
-<li><p>Create a directory for the back up by making a directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">chaos</span><span class="o">/</span><span class="n">influx_backup</span>
-</pre></div>
-</div>
-<p>a. Create a new folder for the metastore and each database. metastore, csvtest, everything, gpstest, iaq, internal, mrt, particles, siemens, test, weather</p>
-</li>
-<li><p>Backup the metastore. The InfluxDB’s metastore contains internal information about the status of the system, including user information, database/shard metadata, CQs, RPs, and subscriptions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo influxd backup /home/chaos/influx_backup/metastore
+<li><p>Go to the directory /etc/docker and create a file name daemon.json.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /etc/docker
+$ touch daemon.json
 </pre></div>
 </div>
 </li>
-<li><p>Backup each database with the following command</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo influxd backup -database &lt;database name&gt; &lt;backup path&gt;
-
-Example:
-$ sudo influxd backup -database everything /home/chaos/influx_backup/everything
+<li><p>With vim open the file and write the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data-root&quot;</span><span class="p">:</span> <span class="s2">&quot;/app/docker&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
-<li><p>Once you have backup all database zip the folder. Zip the backup folder by typing in the command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo zip -r ifbu_yyyymmdd.zip /home/chaos/influx_backup
+<li><p>Create the directory with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir /app/docker
 </pre></div>
 </div>
 </li>
-<li><p>Logout of Chaosbox. Use the scp command to download the zipfile.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ scp chaos@chaosbox.princeton.edu:/home/chaos/ifbu_20200713.zip C:\test\
+<li><p>Sync the old docker data to this new directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp -r /var/lib/docker/ /app
 </pre></div>
 </div>
 </li>
-<li><p>Upload the zip file to the Chaos Research Google Drive “Chaos Research/influx_backup”</p></li>
+<li><p>Restart Docker.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ service docker restart
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 
@@ -327,8 +325,8 @@ $ sudo influxd backup -database everything /home/chaos/influx_backup/everything
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="034local_dimage.html" title="previous page">Downloading Docker Image Locally</a>
-    <a class='right-next' id="next-link" href="036restore_influx.html" title="next page">Restore data to InfluxDB 1.8</a>
+    <a class='left-prev' id="prev-link" href="038ssl_cert.html" title="previous page">Request for SSL Certificate from Princeton</a>
+    <a class='right-next' id="next-link" href="../040/040appendix.html" title="next page">Appendix</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
