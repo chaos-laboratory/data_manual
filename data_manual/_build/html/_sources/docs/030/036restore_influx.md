@@ -6,6 +6,15 @@
 
     $ restore -online -db <path-to-backup>
 
+    -online is for legacy data we can use -portable for more current InfluxDB
+
+    $influxd restore -portable <path-to-backy-files>
+
     Example
-    $ influxd restore -online -db everything /influx_backup/everything
+    to restore specific database
+    $ influxd restore -portable -db everything /influx_backup/everything
+
+    to restore all databases
+    $ influxd restore -portable /influx_backup/everything
+
     ```

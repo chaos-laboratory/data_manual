@@ -99,7 +99,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../020/021work_eg1.html">
-     Workflow Example 1
+     Workflow Example 1 - Posting to Our Server with Particle Device
     </a>
    </li>
   </ul>
@@ -149,6 +149,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="038ssl_cert.html">
      Request for SSL Certificate from Princeton
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="039mv_dockervar.html">
+     Move Docker Data Folder to /app Folder
     </a>
    </li>
   </ul>
@@ -265,8 +270,17 @@
 
 $ restore -online -db &lt;path-to-backup&gt;
 
+-online is for legacy data we can use -portable for more current InfluxDB
+
+$influxd restore -portable &lt;path-to-backy-files&gt;
+
 Example
-$ influxd restore -online -db everything /influx_backup/everything
+to restore specific database
+$ influxd restore -portable -db everything /influx_backup/everything
+
+to restore all databases
+$ influxd restore -portable /influx_backup/everything
+
 </pre></div>
 </div>
 </li>
