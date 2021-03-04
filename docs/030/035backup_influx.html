@@ -99,7 +99,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../020/021work_eg1.html">
-     Workflow Example 1
+     Workflow Example 1 - Posting to Our Server with Particle Device
     </a>
    </li>
   </ul>
@@ -296,6 +296,11 @@ $ sudo influxd backup -database everything /home/chaos/influx_backup/everything
 </div>
 </li>
 <li><p>Upload the zip file to the Chaos Research Google Drive “Chaos Research/influx_backup”</p></li>
+<li><p>To backup all the databases in the InfluxDB</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo influxd backup -portable &lt;backup_path&gt;
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 

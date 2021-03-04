@@ -30,3 +30,8 @@
     ```
 
 7. Upload the zip file to the Chaos Research Google Drive “Chaos Research/influx_backup”
+
+8. To backup all the databases in the InfluxDB
+    ```
+    $ sudo influxd backup -portable <backup_path>
+    ```
