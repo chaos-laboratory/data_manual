@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workflow Example 1 - Posting to Our Server with Particle Device &#8212; Chaos Lab Data Manual</title>
+    <title>Connect Particle to Servicenet &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tasks" href="../030/030task.html" />
-    <link rel="prev" title="Workflows" href="020work.html" />
+    <link rel="next" title="Appendix" href="../040/040appendix.html" />
+    <link rel="prev" title="Move Docker Data Folder to /app Folder" href="039mv_dockervar.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,13 +92,13 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="020work.html">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../020/020work.html">
    Workflows
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../020/021work_eg1.html">
      Workflow Example 1 - Posting to Our Server with Particle Device
     </a>
    </li>
@@ -106,58 +106,58 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../030/030task.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="030task.html">
    Tasks
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/031connect_oit.html">
+    <a class="reference internal" href="031connect_oit.html">
      Connect to Princeton OIT Server
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/032chaosbox.html">
+    <a class="reference internal" href="032chaosbox.html">
      Connect to Chaosbox
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/033install_docker.html">
+    <a class="reference internal" href="033install_docker.html">
      Install Docker on OIT Server
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/034local_dimage.html">
+    <a class="reference internal" href="034local_dimage.html">
      Downloading Docker Image Locally
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/035backup_influx.html">
+    <a class="reference internal" href="035backup_influx.html">
      Instructions to Backup Influxdb 1.2 (installed on chaosbox)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/036restore_influx.html">
+    <a class="reference internal" href="036restore_influx.html">
      Restore data to InfluxDB 1.8
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/037access_influx.html">
+    <a class="reference internal" href="037access_influx.html">
      Access InfluxDB
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/038ssl_cert.html">
+    <a class="reference internal" href="038ssl_cert.html">
      Request for SSL Certificate from Princeton
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../030/039mv_dockervar.html">
+    <a class="reference internal" href="039mv_dockervar.html">
      Move Docker Data Folder to /app Folder
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../030/040particle_servicenet.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Connect Particle to Servicenet
     </a>
    </li>
@@ -219,7 +219,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/020/021work_eg1.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/040particle_servicenet.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -239,7 +239,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/021work_eg1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/040particle_servicenet.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -267,18 +267,13 @@
         
               <div>
                 
-  <div class="section" id="workflow-example-1-posting-to-our-server-with-particle-device">
-<h1>Workflow Example 1 - Posting to Our Server with Particle Device<a class="headerlink" href="#workflow-example-1-posting-to-our-server-with-particle-device" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="connect-particle-to-servicenet">
+<h1>Connect Particle to Servicenet<a class="headerlink" href="#connect-particle-to-servicenet" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
-<li><p>Register and setup your Particle device with our chaos lab particle account. Follow the instruction <a class="reference external" href="https://setup.particle.io/">here</a>.</p></li>
-<li><p>Once your device is registered, go to the <a class="reference external" href="https://console.particle.io/devices">particle web console</a>. Check if the device is on the list.</p></li>
-<li><p>Go to the <a class="reference external" href="https://build.particle.io/build/new">Web IDE</a></p></li>
-<li><p>Go to the Devices tab, star the device that you have registered.</p></li>
-<li><p>Click on the code option on the left side bar.</p></li>
-<li><p>In the search bar for ‘My apps’ search for ‘STAPI’. You will see a series of STAPIXX_XXX scripts.</p></li>
-<li><p>Follow the instructions <a class="reference external" href="https://chenkianwee.github.io/masa3db/docs/040/042particle.html">here</a> to setup your device to post to our database.</p></li>
-<li><p>To check the data you can either go to our <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server">FROST-Server</a> or <a class="reference external" href="https://andlchaos300l.princeton.edu:3000">Granfana</a>.</p></li>
-<li><p>For Grafana, follow the <a class="reference external" href="https://chenkianwee.github.io/masa3db/docs/040/046grafana.html#create-dashboards">Create Dashboard</a> instructions to look at the data.</p></li>
+<li><p>Get the Mac address of the particle device.</p></li>
+<li><p>Install the Particle Cli <a class="reference external" href="https://docs.particle.io/tutorials/developer-tools/cli/">here</a></p></li>
+<li><p>Type in ‘particle setup’ to run the cli. Then run ‘particle serial mac’ to get the mac address.</p></li>
+<li><p>Register the device MAC address <a class="reference external" href="https://princeton.service-now.com/service?id=sc_cat_item&amp;sys_id=27c256984f8a174018ddd48e5210c7a2&amp;sysparm_category=0c0591f14f9d270c18ddd48e5210c79c">here</a>. You need your Princeton login for this. Your phone needs to be connected to the servine net too.</p></li>
 </ol>
 </div>
 
@@ -295,7 +290,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs\020"
+            path: "./docs\030"
         },
         predefinedOutput: true
     }
@@ -310,8 +305,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="020work.html" title="previous page">Workflows</a>
-    <a class='right-next' id="next-link" href="../030/030task.html" title="next page">Tasks</a>
+    <a class='left-prev' id="prev-link" href="039mv_dockervar.html" title="previous page">Move Docker Data Folder to /app Folder</a>
+    <a class='right-next' id="next-link" href="../040/040appendix.html" title="next page">Appendix</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
