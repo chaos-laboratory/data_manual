@@ -55,7 +55,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Appendix" href="../040/040appendix.html" />
+    <link rel="next" title="Register Sensor and ObservedProperties to Our Database" href="041reg_sensor_obsprop.html" />
     <link rel="prev" title="Move Docker Data Folder to /app Folder" href="039mv_dockervar.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -99,7 +99,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../020/021work_eg1.html">
-     Workflow Example 1 - Posting to Our Server with Particle Device
+     SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon
     </a>
    </li>
   </ul>
@@ -159,6 +159,16 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Connect Particle to Servicenet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="041reg_sensor_obsprop.html">
+     Register Sensor and ObservedProperties to Our Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="042advance_analytics.html">
+     Advance Analytics
     </a>
    </li>
   </ul>
@@ -269,11 +279,16 @@
                 
   <div class="section" id="connect-particle-to-servicenet">
 <h1>Connect Particle to Servicenet<a class="headerlink" href="#connect-particle-to-servicenet" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Get the Mac address of the particle device.</p></li>
-<li><p>Install the Particle Cli <a class="reference external" href="https://docs.particle.io/tutorials/developer-tools/cli/">here</a></p></li>
-<li><p>Type in ‘particle setup’ to run the cli. Then run ‘particle serial mac’ to get the mac address.</p></li>
-<li><p>Register the device MAC address <a class="reference external" href="https://princeton.service-now.com/service?id=sc_cat_item&amp;sys_id=27c256984f8a174018ddd48e5210c7a2&amp;sysparm_category=0c0591f14f9d270c18ddd48e5210c79c">here</a>. You need your Princeton login for this. Your phone needs to be connected to the servine net too.</p></li>
+<ol>
+<li><p>Get the Mac address of the particle device by installing the Particle Cli <a class="reference external" href="https://docs.particle.io/tutorials/developer-tools/cli/">here</a>.</p></li>
+<li><p>Once installed, go to the terminal. Connect your Particle Device to your machine. For windows machine, type ‘cmd’ in your seach bar and click on the command prompt. In the terminal, type in ‘particle serial mac’ to get the mac address. Make sure you are using a  data usb cable.</p>
+<div class="figure align-default" id="particle-mac">
+<a class="reference internal image-reference" href="../../_images/particle_mac.PNG"><img alt="../../_images/particle_mac.PNG" src="../../_images/particle_mac.PNG" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Getting the Mac address of a Particle Device.</span><a class="headerlink" href="#particle-mac" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Get the Mac address of your phone. For IPhone, follow the instructions <a class="reference external" href="https://www.wikihow.com/Find-a-Mac-Address-on-an-iPhone">here</a>. For Android, follow the instructions <a class="reference external" href="https://www.wikihow.com/Find-Your-Mac-Address-on-Samsung-Galaxy">here</a>.</p></li>
+<li><p>Register the device MAC address <a class="reference external" href="https://princeton.service-now.com/service?id=sc_cat_item&amp;sys_id=27c256984f8a174018ddd48e5210c7a2&amp;sysparm_category=0c0591f14f9d270c18ddd48e5210c79c">here</a>. You need your Princeton login for this. Your phone needs to be connected to the servicenet too.</p></li>
 </ol>
 </div>
 
@@ -306,7 +321,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="039mv_dockervar.html" title="previous page">Move Docker Data Folder to /app Folder</a>
-    <a class='right-next' id="next-link" href="../040/040appendix.html" title="next page">Appendix</a>
+    <a class='right-next' id="next-link" href="041reg_sensor_obsprop.html" title="next page">Register Sensor and ObservedProperties to Our Database</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
