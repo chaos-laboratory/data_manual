@@ -19,6 +19,7 @@
     - file: docs/030/040particle_servicenet
     - file: docs/030/041reg_sensor_obsprop
     - file: docs/030/042advance_analytics
+    - file: docs/030/043new_deploy
 - file: docs/040/040appendix
   sections:
      - file: docs/040/influx_dbs
