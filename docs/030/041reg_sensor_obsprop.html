@@ -102,6 +102,11 @@
      SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../020/022work_eg2.html">
+     Get Data from Desigo and Post to FROST-Server
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -174,6 +179,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="043new_deploy.html">
      Register New Deployment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="044del_thing.html">
+     Delete a Thing with Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="045patch.html">
+     Patch a Datastream with Python
     </a>
    </li>
   </ul>
@@ -285,6 +300,11 @@
    Particle Web IDE
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -306,7 +326,7 @@
 <li><p>Go to the Particle <span class="xref myst">Web IDE</span> and login with our CHAOS Lab credentials. Approach our lab memeber for the logins. In the Web IDE, go to Code -&gt; Search for STAPI -&gt; STAPI04_RegisterSensor.</p>
 <div class="figure align-default" id="reg-sensor">
 <a class="reference internal image-reference" href="../../_images/reg_sensor.png"><img alt="../../_images/reg_sensor.png" src="../../_images/reg_sensor.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Register a new sensor with this script.</span><a class="headerlink" href="#reg-sensor" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Register a new sensor with this script.</span><a class="headerlink" href="#reg-sensor" title="Permalink to this image">¶</a></p>
 </div>
 <p>a. In this example, we are registering a DHT22 sensor. Here are the parameters for registering the sensor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;DHT22&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sensor</span>
@@ -318,18 +338,18 @@
 <p>b. Flash the code to the Particle Device. The event page of the Particle Device will show this message if successfully registered.</p>
 <div class="figure align-default" id="reg-sensor2">
 <a class="reference internal image-reference" href="../../_images/reg_sensor2.png"><img alt="../../_images/reg_sensor2.png" src="../../_images/reg_sensor2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Successful registration of a sensor.</span><a class="headerlink" href="#reg-sensor2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Successful registration of a sensor.</span><a class="headerlink" href="#reg-sensor2" title="Permalink to this image">¶</a></p>
 </div>
 <p>c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors</a> to get the details of the sensor. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
 <div class="figure align-default" id="reg-sensor3">
 <a class="reference internal image-reference" href="../../_images/reg_sensor3.png"><img alt="../../_images/reg_sensor3.png" src="../../_images/reg_sensor3.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Details of the registered sensor.</span><a class="headerlink" href="#reg-sensor3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Details of the registered sensor.</span><a class="headerlink" href="#reg-sensor3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Similar to registering a new sensor. Registering a new ObservedProperties uses the script ‘STAPI05-RegisterObservedProp’.</p>
 <div class="figure align-default" id="reg-obsprop">
 <a class="reference internal image-reference" href="../../_images/reg_obsprop.png"><img alt="../../_images/reg_obsprop.png" src="../../_images/reg_obsprop.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Register a new observation property with this script.</span><a class="headerlink" href="#reg-obsprop" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Register a new observation property with this script.</span><a class="headerlink" href="#reg-obsprop" title="Permalink to this image">¶</a></p>
 </div>
 <p>a. In this example, we are registering the property absolute humidity. Here are the parameters for registering the property.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Absolute Humidity&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">observed</span> <span class="n">properties</span>
@@ -342,8 +362,36 @@
 c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties</a> to get the details of the property. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
 <div class="figure align-default" id="reg-obsprop2">
 <a class="reference internal image-reference" href="../../_images/reg_obsprop2.png"><img alt="../../_images/reg_obsprop2.png" src="../../_images/reg_obsprop2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Details of the registered property.</span><a class="headerlink" href="#reg-obsprop2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Details of the registered property.</span><a class="headerlink" href="#reg-obsprop2" title="Permalink to this image">¶</a></p>
 </div>
+</li>
+</ol>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>This example assumes you know how to run a Python script.</strong></p></li>
+</ul>
+<ol>
+<li><p>Download the Python script, ‘sensorthings_reg_sensor_prop.py’ from <a class="reference external" href="https://github.com/chaos-laboratory/sensorthingsAPIeg">https://github.com/chaos-laboratory/sensorthingsAPIeg</a>. Under the code tab you can download all the codes as a zip file. Approach a lab member for the login credentials.
+a. For sensor fill in these parameters and run the script to post to the database.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>  
+<span class="n">sensor_data1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Generic Flow Meter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Use this flow meter if unsure of the exact sensor&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;encodingType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="s2">&quot;generic flow meter&quot;</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
+<p>b. For observedProperties fill in these parameters and run the script to post to the database.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span><span class="p">:</span>
+<span class="n">observed_prop1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Flow rate&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The fluid flow rate at the point&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/Volumetric_flow_rate&quot;</span>
+                  <span class="p">}</span>
+</pre></div>
+</div>
+<p>c. Run the script once the parameters are filled. Visit <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties</a> to check on the created objects.</p>
 </li>
 </ol>
 </div>

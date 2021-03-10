@@ -4722,27 +4722,35 @@ V14fiyRrj6LRVvyx/BzRaKuv8xIRERERERG5+R/1/uSnYUcP4AAAAABJRU5ErkJggg==
 "
        preserveAspectRatio="none"
        height="321.20416"
-       width="546.62915" />
+       width="546.62915"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#960000;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect826"
        width="17.973877"
        height="12.762119"
        x="-191.96634"
-       y="218.69002" />
+       y="218.69002"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#960000;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect828"
        width="71.248512"
        height="9.260417"
        x="-171.97917"
-       y="109.5238" />
+       y="109.5238"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#960000;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect830"
        width="441.85416"
        height="179.16072"
        x="-83.910713"
-       y="-27.303572" />
+       y="-27.303572"
+       inkscape:export-xdpi="72"
+       inkscape:export-ydpi="72" />
   </g>
 </svg>

@@ -56,3 +56,25 @@ In this task we will use the Particle Web IDE to post a new sensor and observati
 
     Details of the registered property.
     ```
+
+## Python
+- **This example assumes you know how to run a Python script.**
+1. Download the Python script, 'sensorthings_reg_sensor_prop.py' from [https://github.com/chaos-laboratory/sensorthingsAPIeg](https://github.com/chaos-laboratory/sensorthingsAPIeg). Under the code tab you can download all the codes as a zip file. Approach a lab member for the login credentials.
+    a. For sensor fill in these parameters and run the script to post to the database.
+    ```
+    Example:  
+    sensor_data1 = {"name": "Generic Flow Meter",
+                    "description": "Use this flow meter if unsure of the exact sensor",
+                    "encodingType": "string",
+                    "metadata": "generic flow meter"
+                    }
+    ```
+    b. For observedProperties fill in these parameters and run the script to post to the database.
+    ```
+    Example:
+    observed_prop1 = {"name": "Flow rate",
+                      "description": "The fluid flow rate at the point",
+                      "definition": "https://en.wikipedia.org/wiki/Volumetric_flow_rate"
+                      }
+    ```
+    c. Run the script once the parameters are filled. Visit [https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties](https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties) to check on the created objects.

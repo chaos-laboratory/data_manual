@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Request for SSL Certificate from Princeton &#8212; Chaos Lab Data Manual</title>
+    <title>Patch a Datastream with Python &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Move Docker Data Folder to /app Folder" href="039mv_dockervar.html" />
-    <link rel="prev" title="Access InfluxDB" href="037access_influx.html" />
+    <link rel="next" title="Appendix" href="../040/040appendix.html" />
+    <link rel="prev" title="Delete a Thing with Python" href="044del_thing.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -151,8 +151,8 @@
      Access InfluxDB
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="038ssl_cert.html">
      Request for SSL Certificate from Princeton
     </a>
    </li>
@@ -186,8 +186,8 @@
      Delete a Thing with Python
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="045patch.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Patch a Datastream with Python
     </a>
    </li>
@@ -249,7 +249,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/030/038ssl_cert.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/030/045patch.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -269,7 +269,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/038ssl_cert.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/045patch.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -297,37 +297,29 @@
         
               <div>
                 
-  <div class="section" id="request-for-ssl-certificate-from-princeton">
-<h1>Request for SSL Certificate from Princeton<a class="headerlink" href="#request-for-ssl-certificate-from-princeton" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="patch-a-datastream-with-python">
+<h1>Patch a Datastream with Python<a class="headerlink" href="#patch-a-datastream-with-python" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>This example assumes you know how to run a Python script.</strong></p></li>
+</ul>
 <ol>
-<li><p>For generating the CSR for the database please refer to <a class="reference external" href="https://chenkianwee.github.io/masa3db/docs/040/049ssl_cert.html">these instructions</a>.</p></li>
-<li><p>Go to the OIT helpdesk webpage for requesting <a class="reference external" href="https://princeton.service-now.com/service?id=kb_article&amp;sys_id=b22a27064f9ca20018ddd48e5210c777">SSL certificate</a>. Then fill in the <a class="reference external" href="https://princeton.service-now.com/service?sys_id=c85dafbd4f752e0018ddd48e5210c7e4&amp;id=sc_cat_item&amp;table=sc_cat_item">form</a></p></li>
-<li><p>You will receive several certificates. First the domain certificate. Cut and paste them like this in a .crt file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
-<span class="p">(</span><span class="n">encoded</span> <span class="n">stuff</span><span class="p">)</span>
-<span class="o">-----</span><span class="n">END</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
+<li><p>Download the Python script, ‘sensorthings_patch.py’ from <a class="reference external" href="https://github.com/chaos-laboratory/sensorthingsAPIeg">https://github.com/chaos-laboratory/sensorthingsAPIeg</a>. Under the code tab you can download all the codes as a zip file. Approach a lab member for the login credentials.
+</Br><Br/>
+a. The script is only 18 lines long. The main script shown below requires you to specify the object and its ID. You have to specify the changes to the particular field of the object. In this example, we are making changes to the ‘unitOfMeasurement’ field of the Datastream object with ID:14. Once you run the script the field will be updated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="s2">&quot;Datastreams&quot;</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="s2">&quot;14&quot;</span>
+<span class="n">ds_json</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;unitOfMeasurement&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;g/kg&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;g/kg&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;definition&quot;</span><span class="p">:</span> <span class="s2">&quot;the amount of grams in a kg of air&quot;</span>
+                            <span class="p">}</span>
+        <span class="p">}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="n">url</span><span class="o">+</span> <span class="n">obj</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="n">idx</span> <span class="o">+</span>  <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="n">auth_user</span><span class="p">,</span> <span class="n">auth_pass</span><span class="p">),</span>
+              <span class="n">json</span><span class="o">=</span><span class="n">ds_json</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>b. Similarly you can patch all the other objects, refer to the <a class="reference external" href="https://developers.sensorup.com/docs/">sensorthings API documentation</a> for more information on the various API commands.</p>
 </li>
-<li><p>The root certificate. Cut and paste them like this in a .crt file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
-<span class="p">(</span><span class="n">encoded</span> <span class="n">stuff</span><span class="p">)</span>
-<span class="o">-----</span><span class="n">END</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
-</pre></div>
-</div>
-</li>
-<li><p>The intermediate certificate. Cut and paste them like this in a .crt file</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
-<span class="p">(</span><span class="n">encoded</span> <span class="n">stuff</span><span class="p">)</span>
-<span class="o">-----</span><span class="n">END</span> <span class="n">CERTIFICATE</span><span class="o">-----</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!!! Make sure there are no spaces at all,
-no empty lines no spaces any spaces will make the file invalid !!!
-</pre></div>
-</div>
-</li>
-<li><p>Copy the certificate into the container running Frost-server, then follow instructions in step 1.</p></li>
 </ol>
 </div>
 
@@ -359,8 +351,8 @@ no empty lines no spaces any spaces will make the file invalid !!!
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="037access_influx.html" title="previous page">Access InfluxDB</a>
-    <a class='right-next' id="next-link" href="039mv_dockervar.html" title="next page">Move Docker Data Folder to /app Folder</a>
+    <a class='left-prev' id="prev-link" href="044del_thing.html" title="previous page">Delete a Thing with Python</a>
+    <a class='right-next' id="next-link" href="../040/040appendix.html" title="next page">Appendix</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
