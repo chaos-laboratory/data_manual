@@ -171,6 +171,11 @@
      Advance Analytics
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="043new_deploy.html">
+     Register New Deployment
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -270,6 +275,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#particle-web-ide">
+   Particle Web IDE
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -279,6 +298,55 @@
                 
   <div class="section" id="register-sensor-and-observedproperties-to-our-database">
 <h1>Register Sensor and ObservedProperties to Our Database<a class="headerlink" href="#register-sensor-and-observedproperties-to-our-database" title="Permalink to this headline">¶</a></h1>
+<p>There are many ways to post to our database as long as you can make a Post REST API request. In this document we will show two ways. 1) Using the Particle Web IDE, 2) Using Python Scripting.</p>
+<div class="section" id="particle-web-ide">
+<h2>Particle Web IDE<a class="headerlink" href="#particle-web-ide" title="Permalink to this headline">¶</a></h2>
+<p>In this task we will use the Particle Web IDE to post a new sensor and observation properties to our database.</p>
+<ol>
+<li><p>Go to the Particle <span class="xref myst">Web IDE</span> and login with our CHAOS Lab credentials. Approach our lab memeber for the logins. In the Web IDE, go to Code -&gt; Search for STAPI -&gt; STAPI04_RegisterSensor.</p>
+<div class="figure align-default" id="reg-sensor">
+<a class="reference internal image-reference" href="../../_images/reg_sensor.png"><img alt="../../_images/reg_sensor.png" src="../../_images/reg_sensor.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Register a new sensor with this script.</span><a class="headerlink" href="#reg-sensor" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. In this example, we are registering a DHT22 sensor. Here are the parameters for registering the sensor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;DHT22&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sensor</span>
+<span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Temperature and Humidity Sensor&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sensor</span>
+<span class="n">encodeType</span> <span class="o">=</span> <span class="s2">&quot;url&quot;</span><span class="p">;</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="s2">&quot;https://www.digikey.com/en/products/detail/adafruit-industries-llc/385/5774230&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>b. Flash the code to the Particle Device. The event page of the Particle Device will show this message if successfully registered.</p>
+<div class="figure align-default" id="reg-sensor2">
+<a class="reference internal image-reference" href="../../_images/reg_sensor2.png"><img alt="../../_images/reg_sensor2.png" src="../../_images/reg_sensor2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Successful registration of a sensor.</span><a class="headerlink" href="#reg-sensor2" title="Permalink to this image">¶</a></p>
+</div>
+<p>c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors</a> to get the details of the sensor. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
+<div class="figure align-default" id="reg-sensor3">
+<a class="reference internal image-reference" href="../../_images/reg_sensor3.png"><img alt="../../_images/reg_sensor3.png" src="../../_images/reg_sensor3.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Details of the registered sensor.</span><a class="headerlink" href="#reg-sensor3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Similar to registering a new sensor. Registering a new ObservedProperties uses the script ‘STAPI05-RegisterObservedProp’.</p>
+<div class="figure align-default" id="reg-obsprop">
+<a class="reference internal image-reference" href="../../_images/reg_obsprop.png"><img alt="../../_images/reg_obsprop.png" src="../../_images/reg_obsprop.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Register a new observation property with this script.</span><a class="headerlink" href="#reg-obsprop" title="Permalink to this image">¶</a></p>
+</div>
+<p>a. In this example, we are registering the property absolute humidity. Here are the parameters for registering the property.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Absolute Humidity&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">observed</span> <span class="n">properties</span>
+<span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot; Absolute Humidity&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">property</span>
+<span class="n">definition</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/Humidity&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">a</span> <span class="n">url</span> <span class="ow">or</span> <span class="n">wiki</span> <span class="n">entry</span> <span class="n">to</span> <span class="n">define</span> <span class="n">the</span> <span class="nb">property</span><span class="p">,</span> <span class="n">your</span> <span class="n">website</span> <span class="n">cannot</span> <span class="n">contain</span> <span class="c1">#</span>
+</pre></div>
+</div>
+<p>b. Once filled, flash the code to the device. You will receive details of the registration on the event page.
+</Br><Br/>
+c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties</a> to get the details of the property. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
+<div class="figure align-default" id="reg-obsprop2">
+<a class="reference internal image-reference" href="../../_images/reg_obsprop2.png"><img alt="../../_images/reg_obsprop2.png" src="../../_images/reg_obsprop2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Details of the registered property.</span><a class="headerlink" href="#reg-obsprop2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

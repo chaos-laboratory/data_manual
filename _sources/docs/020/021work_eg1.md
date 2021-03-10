@@ -113,14 +113,14 @@ We will need the following hardwares:
 
     If the device is registered on our database you will see this message.
     ```
-11. We assumed the device is not registered on our database. If it is already registered, please refer to the register new deployment workflow. Flash the 'STAPI02_RegisterDevice' script. Fill in the parameters as shown in the figure below.
+11. We assumed the device is not registered on our database. If it is already registered, please refer to the register new deployment workflow ({doc}`../030/043new_deploy`). Flash the 'STAPI02_RegisterDevice' script. Fill in the parameters as shown in the figure below.
     ```{figure} /_static/021work_eg1/web_ide6.png
     :width: 100%
     :name: web_ide6
 
     Fill in the parameters to register the device on our database
     ```
-    a. Fill in the parameters as follows. For more information on registering new Sensors and ObservedProperties please refer to the respective documents. Register New Sensor and ObservedProperties {doc}`../030/041reg_sensor_obsprop`.
+    a. Fill in the parameters as follows. For more information on registering new Sensors and ObservedProperties please refer to the respective documents. Register New Sensor and ObservedProperties ({doc}`../030/041reg_sensor_obsprop`).
     ```
     Explanation of each parameter
 
