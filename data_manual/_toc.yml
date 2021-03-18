@@ -5,6 +5,9 @@
 - file: docs/020/020work
   sections:
     - file: docs/020/021work_eg1
+    - file: docs/020/022work_eg2
+    - file: docs/020/023work_eg3
+    - file: docs/020/024work_eg4
 - file: docs/030/030task
   sections:
     - file: docs/030/031connect_oit
@@ -20,6 +23,8 @@
     - file: docs/030/041reg_sensor_obsprop
     - file: docs/030/042advance_analytics
     - file: docs/030/043new_deploy
+    - file: docs/030/044del_thing
+    - file: docs/030/045patch
 - file: docs/040/040appendix
   sections:
      - file: docs/040/influx_dbs
