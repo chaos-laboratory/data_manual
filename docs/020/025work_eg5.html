@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Sensirion SCD30 CO2 Sensors with HUZZAH32 &#8212; Chaos Lab Data Manual</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Connect to Princeton OIT Server" href="../030/031connect_oit.html" />
+    <link rel="prev" title="4. Sensirion SCD30 CO2 Sensors with Particle Argon" href="024work_eg4.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Chaos Lab Data Manual</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../010/010intro.html">
+   Chaos Lab Data Manual
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Tasks
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="021work_eg1.html">
+   1. SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="022work_eg2.html">
+   2. Get Data from Desigo and Post to FROST-Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="023work_eg3.html">
+   3. Amphenol Telaire T6713 CO2 Sensors with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="024work_eg4.html">
+   4. Sensirion SCD30 CO2 Sensors with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Sensirion SCD30 CO2 Sensors with HUZZAH32
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Sub-Tasks
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/031connect_oit.html">
+   1. Connect to Princeton OIT Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/032chaosbox.html">
+   2. Connect to Chaosbox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/033install_docker.html">
+   3. Install Docker on OIT Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/034local_dimage.html">
+   4. Downloading Docker Image Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/035backup_influx.html">
+   5. Instructions to Backup Influxdb 1.2 (installed on chaosbox)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/036restore_influx.html">
+   6. Restore data to InfluxDB 1.8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/037access_influx.html">
+   7. Access InfluxDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/038ssl_cert.html">
+   8. Request for SSL Certificate from Princeton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/039mv_dockervar.html">
+   9. Move Docker Data Folder to /app Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/040particle_servicenet.html">
+   10. Connect Particle to Servicenet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/041reg_sensor_obsprop.html">
+   11. Register Sensor and ObservedProperties to Our Database
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/042advance_analytics.html">
+   12. Advance Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/043new_deploy.html">
+   13. Register New Deployment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/044del_thing.html">
+   14. Delete a Thing with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/045patch.html">
+   15. Patch a Datastream with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../030/046huzzah.html">
+   16. Micropython on HUZZAH32
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../040/influx_dbs.html">
+   1. Information on the databases in InfluxDB (Chaos Legacy DB)
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/020/025work_eg5.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/025work_eg5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#securing-passwords-and-codes">
+   5.1. Securing Passwords and codes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-pycom-boards">
+     5.1.1. For Pycom boards
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sensirion-scd30-co2-sensors-with-huzzah32">
+<h1><span class="section-number">5. </span>Sensirion SCD30 CO2 Sensors with HUZZAH32<a class="headerlink" href="#sensirion-scd30-co2-sensors-with-huzzah32" title="Permalink to this headline">¶</a></h1>
+<p>This the sensor we are going to build in this exercise.</p>
+<div class="figure align-default" id="scd-d1">
+<a class="reference internal image-reference" href="../../_images/scd30_d1.jpg"><img alt="../../_images/scd30_d1.jpg" src="../../_images/scd30_d1.jpg" style="width: 100%;" /></a>
+</div>
+<p>We will need the following hardwares:</p>
+<ul class="simple">
+<li><p>HUZZAH32 (Can be bought <a class="reference external" href="https://www.adafruit.com/product/3591">here</a>)</p></li>
+<li><p>USB Data Cable</p></li>
+<li><p>A SCD30 Sensor (Can be bought <a class="reference external" href="https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334">here</a>)</p></li>
+<li><p>Jumper Wires x 4 (Can be bought <a class="reference external" href="https://www.adafruit.com/product/1956">here</a>)</p></li>
+<li><p>Breadboard (Can be bought <a class="reference external" href="https://www.amazon.com/dp/B07DL13RZH/ref=redir_mobile_desktop?_encoding=UTF8&amp;aaxitk=Ha8lI6PHb2sFCtkeyNViLQ&amp;hsa_cr_id=4991273630901&amp;pd_rd_plhdr=t&amp;pd_rd_r=e429b428-9c18-43cc-bdb2-24937613797e&amp;pd_rd_w=SmgRr&amp;pd_rd_wg=zw5Ku&amp;ref_=sbx_be_s_sparkle_mcd_asin_0_img">here</a>)</p></li>
+<li><p>Soldering Kit (Can be bought <a class="reference external" href="https://www.amazon.com/Soldering-Iron-Kit-Temperature-Desoldering/dp/B073VDX4B7/ref=sr_1_1_sspa?crid=3TI8MUBYG9QXZ&amp;dchild=1&amp;keywords=soldering+kit&amp;qid=1615313665&amp;s=industrial&amp;sprefix=soldering%2Cindustrial%2C166&amp;sr=1-1-spons&amp;psc=1&amp;smid=A1XLBTH0MIQMMO&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFHUTdTSUtLUkdESUQmZW5jcnlwdGVkSWQ9QTAzODE3MjcyS0REVDQ5U1JLSVk4JmVuY3J5cHRlZEFkSWQ9QTAxMjYzMDYxOTk2N0ZMSjdVUVI2JndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==">here</a>)</p></li>
+<li><p>Laptop</p></li>
+</ul>
+<ol>
+<li><p>Solder the header to your SCD30. Follow similar soldering instructions <a class="reference external" href="https://learn.adafruit.com/adafruit-sht31-d-temperature-and-humidity-sensor-breakout/assembly">here</a>.
+</Br><Br/></p></li>
+<li><p>Connect the HUZZAH32 and SCD30 onto the breadboard as shown in the previous figure. Wire up the Argon and the sensor as follows:
+</Br><Br/>
+a.  Connect the USB pin of the HUZZAH32 to VIN of the SCD30 sensor.</p>
+<div class="figure align-default" id="scd30-d2">
+<a class="reference internal image-reference" href="../../_images/scd30_d2.jpg"><img alt="../../_images/scd30_d2.jpg" src="../../_images/scd30_d2.jpg" style="width: 100%;" /></a>
+</div>
+<p>b. Connect the Ground (GND) pin of HUZZAH32 to GND of SCD30 sensor.</p>
+<div class="figure align-default" id="scd30-d3">
+<a class="reference internal image-reference" href="../../_images/scd30_d3.jpg"><img alt="../../_images/scd30_d3.jpg" src="../../_images/scd30_d3.jpg" style="width: 100%;" /></a>
+</div>
+<p>c. Connect the HUZZAH32 SCL pin to SCL of the SCD30 sensor.</p>
+<div class="figure align-default" id="scd30-d4">
+<a class="reference internal image-reference" href="../../_images/scd30_d4.jpg"><img alt="../../_images/scd30_d4.jpg" src="../../_images/scd30_d4.jpg" style="width: 100%;" /></a>
+</div>
+<p>d. Connect the HUZZAH32 SDA pin to SDA of the SCD30 sensor.</p>
+<div class="figure align-default" id="scd30-d5">
+<a class="reference internal image-reference" href="../../_images/scd30_d5.jpg"><img alt="../../_images/scd30_d5.jpg" src="../../_images/scd30_d5.jpg" style="width: 100%;" /></a>
+</div>
+</li>
+<li><p>Refer to  <strong>Step 4 to 15</strong> of <a class="reference internal" href="021work_eg1.html"><span class="doc">SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</span></a> to register the Argon Device with the FROST-Server. For <strong>Step 11a</strong> use the following parameters to register the device. For <strong>Step 12</strong> flash the ‘STAPI_Sensirion_SCD30’ script to the device. Fill in the parameters with the datastream ID from the registered device.</p></li>
+</ol>
+<div class="section" id="securing-passwords-and-codes">
+<h2><span class="section-number">5.1. </span>Securing Passwords and codes<a class="headerlink" href="#securing-passwords-and-codes" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Highest level of security, enable secure boot and flash encrpytion. Precompile and Freeze the python module and bundle it with the firmware. Require the most amount of effort with compiling and freezing modules.</p>
+<p>https://forum.micropython.org/viewtopic.php?t=4510</p>
+<p>https://limitedresults.com/2019/11/pwn-the-esp32-forever-flash-encryption-and-sec-boot-keys-extraction/</p>
+<p>https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html</p>
+<p>https://iotworkers.com/board-development/esp32-the-secure-boot.html</p>
+<p>https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/secure-boot-v1.html#secure-boot-reflashable</p>
+</li>
+<li><p>Quite secure, but it will be very inconvenient as once the chip lose power, you will have to have physical access to the chip to restart. Store the password in memory. Once the board is restarted, all passwords are lost. https://forum.micropython.org/viewtopic.php?t=7013</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="n">rtc</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">RTC</span><span class="p">()</span>
+<span class="n">rtc</span><span class="o">.</span><span class="n">memory</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Easiest and most convenient, but least secure. Encrpyt the password “https://forum.micropython.org/viewtopic.php?f=16&amp;t=6726&amp;p=38315&amp;hilit=ucryptolib.aes#p38315” and compile it into .mpy file. The password will be encrypted into bytecode. The password won’t be human readable. However, it is possible to reverse engineer the .mpy files and obtain the password.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Download mpy-cross with
+
+$ pip install mpy-cross
+
+$ python -m mpy_cross F:\kianwee_work\spyder_workspace\upycraft\workSpace\scd30\main.py -march=xtensawin -X emit=bytecode
+
+$ ampy -p COM4 put F:\kianwee_work\spyder_workspace\upycraft\workSpace\scd30\connect_wifi.mpy
+</pre></div>
+</div>
+</li>
+<li><p>Using wifimanager library.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">randomnerdtutorials</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">micropython</span><span class="o">-</span><span class="n">wi</span><span class="o">-</span><span class="n">fi</span><span class="o">-</span><span class="n">manager</span><span class="o">-</span><span class="n">esp32</span><span class="o">-</span><span class="n">esp8266</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="section" id="for-pycom-boards">
+<h3><span class="section-number">5.1.1. </span>For Pycom boards<a class="headerlink" href="#for-pycom-boards" title="Permalink to this headline">¶</a></h3>
+<p>Can use these instructions for references
+https://docs.pycom.io/advance/frozen/
+https://docs.pycom.io/advance/encryption/</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\020"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="024work_eg4.html" title="previous page"><span class="section-number">4. </span>Sensirion SCD30 CO2 Sensors with Particle Argon</a>
+    <a class='right-next' id="next-link" href="../030/031connect_oit.html" title="next page"><span class="section-number">1. </span>Connect to Princeton OIT Server</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chaos Lab<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
