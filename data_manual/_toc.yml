@@ -29,6 +29,7 @@
     - file: docs/030/044del_thing
     - file: docs/030/045patch
     - file: docs/030/046huzzah
+    - file: docs/030/047mpysecure
 - part: Appendix
   chapters:
     - file: docs/040/influx_dbs
