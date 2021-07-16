@@ -44,12 +44,10 @@ This exercise assumes you are familiar with programming with Python and Anaconda
 8. In Thonny go to Tools -> Options -> Interpreter. In the 'Which interpreter or device should Thonny use for running your code?', choose Micropython (ESP32). In the 'Port or WebREPL', choose the COM your HUZZAH32 board is connected to.
     ```{figure} /_static/046huzzah/thonny.PNG
     :width: 100%
-    :name: thonny
     ```
     - Once chosen, the shell will show it is connected to the Micropython on the HUZZAH32.
       ```{figure} /_static/046huzzah/thonny2.PNG
       :width: 100%
-      :name: thonny2
       ```
 9. Connect to an existing WiFi network and enable webrepl interface. This will allow you to access the device through a local network.
     - Write a script and upload it onto the board to connect to the internet. Go to File -> New. Copy and paste the codes onto the script. Connect to an existing wifi network with the following script.
@@ -83,13 +81,11 @@ This exercise assumes you are familiar with programming with Python and Anaconda
 10. Go to File -> Save as ... -> Micropython device. Save the script as main.py. The boot.py and main.py are executed at each startup of the board.
     ```{figure} /_static/046huzzah/thonny3.PNG
     :width: 100%
-    :name: thonny3
     ```
 
 11. Press the reset button on HUZZAH32. If your credentials for your Wifi network is correct, you will see the successful connection message.
     ```{figure} /_static/046huzzah/thonny4.PNG
     :width: 100%
-    :name: thonny4
     ```
 
 12. To enable webrepl, open the boot.py file.
@@ -99,7 +95,6 @@ This exercise assumes you are familiar with programming with Python and Anaconda
       ```
       ```{figure} /_static/046huzzah/thonny5.PNG
       :width: 100%
-      :name: thonny5
       ```
     - Check the boot.py file these two lines of code will be uncommented.
       ```
@@ -114,7 +109,6 @@ This exercise assumes you are familiar with programming with Python and Anaconda
 
       ```{figure} /_static/046huzzah/webrepl.PNG
       :width: 100%
-      :name: webrepl
       ```
 
 13. Next we will write a blink.py script and upload it onto the board to blink the LED on HUZZAH32. Go to File -> New. Copy and paste the codes onto the script. Save the file as main.py as in step 9.
