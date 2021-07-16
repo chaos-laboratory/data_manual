@@ -367,12 +367,12 @@ $ esptool --chip esp32 --port COMx --baud 460800 write_flash -z 0x1000 &lt;micro
 </li>
 <li><p>With Micropython install on your board. We can write some codes with the Thonny IDE. Download the Thonny IDE <a href="https://thonny.org/" target="_blank">here</a>.</p></li>
 <li><p>In Thonny go to Tools -&gt; Options -&gt; Interpreter. In the ‘Which interpreter or device should Thonny use for running your code?’, choose Micropython (ESP32). In the ‘Port or WebREPL’, choose the COM your HUZZAH32 board is connected to.</p>
-<div class="figure align-default" id="thonny">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thonny.PNG"><img alt="../../_images/thonny.PNG" src="../../_images/thonny.PNG" style="width: 100%;" /></a>
 </div>
 <ul>
 <li><p>Once chosen, the shell will show it is connected to the Micropython on the HUZZAH32.</p>
-<div class="figure align-default" id="thonny2">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thonny2.PNG"><img alt="../../_images/thonny2.PNG" src="../../_images/thonny2.PNG" style="width: 100%;" /></a>
 </div>
 </li>
@@ -411,12 +411,12 @@ $ esptool --chip esp32 --port COMx --baud 460800 write_flash -z 0x1000 &lt;micro
 </ul>
 </li>
 <li><p>Go to File -&gt; Save as … -&gt; Micropython device. Save the script as main.py. The boot.py and main.py are executed at each startup of the board.</p>
-<div class="figure align-default" id="thonny3">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thonny3.PNG"><img alt="../../_images/thonny3.PNG" src="../../_images/thonny3.PNG" style="width: 100%;" /></a>
 </div>
 </li>
 <li><p>Press the reset button on HUZZAH32. If your credentials for your Wifi network is correct, you will see the successful connection message.</p>
-<div class="figure align-default" id="thonny4">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thonny4.PNG"><img alt="../../_images/thonny4.PNG" src="../../_images/thonny4.PNG" style="width: 100%;" /></a>
 </div>
 </li>
@@ -426,7 +426,7 @@ $ esptool --chip esp32 --port COMx --baud 460800 write_flash -z 0x1000 &lt;micro
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">webrepl_setup</span>
 </pre></div>
 </div>
-<div class="figure align-default" id="thonny5">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thonny5.PNG"><img alt="../../_images/thonny5.PNG" src="../../_images/thonny5.PNG" style="width: 100%;" /></a>
 </div>
 </li>
@@ -441,7 +441,7 @@ $ esptool --chip esp32 --port COMx --baud 460800 write_flash -z 0x1000 &lt;micro
 </pre></div>
 </div>
 <p>You will be prompted to enter the password you entered when setting up the webrepl. If successful you will be able to control the HUZZAH board as shown below. Remember to disconnect your board from the Thonny IDE. If not you will not be able to type in any commands in the webrepl.</p>
-<div class="figure align-default" id="webrepl">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/webrepl.PNG"><img alt="../../_images/webrepl.PNG" src="../../_images/webrepl.PNG" style="width: 100%;" /></a>
 </div>
 </li>

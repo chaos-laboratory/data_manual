@@ -4,7 +4,6 @@ This the sensor we are going to build in this exercise.
 
 ```{figure} /_static/025work_eg5/scd30_d1.jpg
 :width: 100%
-:name: scd_d1
 ```
 We will need the following hardwares:
 - HUZZAH32 (Can be bought [here](https://www.adafruit.com/product/3591))
@@ -23,25 +22,21 @@ We will need the following hardwares:
     - Connect the USB pin of the HUZZAH32 to VIN of the SCD30 sensor.
       ```{figure} /_static/025work_eg5/scd30_d2.jpg
       :width: 100%
-      :name: scd30_d2
       ```
 
     - Connect the Ground (GND) pin of HUZZAH32 to GND of SCD30 sensor.
       ```{figure} /_static/025work_eg5/scd30_d3.jpg
       :width: 100%
-      :name: scd30_d3
       ```
 
     - Connect the HUZZAH32 SCL pin to SCL of the SCD30 sensor.
       ```{figure} /_static/025work_eg5/scd30_d4.jpg
       :width: 100%
-      :name: scd30_d4
       ```
 
     - Connect the HUZZAH32 SDA pin to SDA of the SCD30 sensor.
       ```{figure} /_static/025work_eg5/scd30_d5.jpg
       :width: 100%
-      :name: scd30_d5
       ```
 3. Refer to  **Step 1 to 11** of {doc}`../030/046huzzah` to setup the HUZZAH32 with Micropython.
 
@@ -59,14 +54,12 @@ We will need the following hardwares:
       ```
 6. Once uploaded you can use Thonny to view and edit the script.
     - Fill in the mandatory parameters in the  main.py script.
-      ```{figure} /_static/025work_eg5/thonny3.png
+      ```{figure} /_static/025work_eg5/view.png
       :width: 100%
-      :name: thonny3
       ```
 7. Open the connect_wifi.py script. Encrypt your ssid and wifi password following the instruction in **Most convenient but lease secure** section of {doc}`../030/047mpysecure`. Enter your encrypted password and the 16 digit key into the script.
-    ```{figure} /_static/025work_eg5/thonny4.png
+    ```{figure} /_static/025work_eg5/key.png
     :width: 100%
-    :name: thonny4
     ```
 8. Open the webrepl_cfg.py script. Enter your encrypted password and the 16 digit key into the script.
 
