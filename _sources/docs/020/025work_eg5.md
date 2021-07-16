@@ -20,72 +20,76 @@ We will need the following hardwares:
 
 2. Connect the HUZZAH32 and SCD30 onto the breadboard as shown in the previous figure. Wire up the Argon and the sensor as follows:
     </Br><Br/>
-    a.  Connect the USB pin of the HUZZAH32 to VIN of the SCD30 sensor.
-    ```{figure} /_static/025work_eg5/scd30_d2.jpg
+    - Connect the USB pin of the HUZZAH32 to VIN of the SCD30 sensor.
+      ```{figure} /_static/025work_eg5/scd30_d2.jpg
+      :width: 100%
+      :name: scd30_d2
+      ```
+
+    - Connect the Ground (GND) pin of HUZZAH32 to GND of SCD30 sensor.
+      ```{figure} /_static/025work_eg5/scd30_d3.jpg
+      :width: 100%
+      :name: scd30_d3
+      ```
+
+    - Connect the HUZZAH32 SCL pin to SCL of the SCD30 sensor.
+      ```{figure} /_static/025work_eg5/scd30_d4.jpg
+      :width: 100%
+      :name: scd30_d4
+      ```
+
+    - Connect the HUZZAH32 SDA pin to SDA of the SCD30 sensor.
+      ```{figure} /_static/025work_eg5/scd30_d5.jpg
+      :width: 100%
+      :name: scd30_d5
+      ```
+3. Refer to  **Step 1 to 11** of {doc}`../030/046huzzah` to setup the HUZZAH32 with Micropython.
+
+4. Download the scd30 scripts from <a href="https://github.com/chaos-laboratory/huzzah32scd30/archive/refs/heads/main.zip" target="_blank">here</a>. Unzip the file.
+
+5. Upload all the scripts in the scd30 folder onto the HUZZAH32 board.
+    - Use the ampy library to upload files to the board.
+      ```
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\boot.py
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\main.py
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\reg_stapi.py
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\connect_wifi.py
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\webrepl_cfg.py
+      $ ampy -p COMx put directory\huzzah32scd30-main\scd30\scd30.py
+      ```
+6. Once uploaded you can use Thonny to view and edit the script.
+    - Fill in the mandatory parameters in the  main.py script.
+      ```{figure} /_static/025work_eg5/thonny3.png
+      :width: 100%
+      :name: thonny3
+      ```
+7. Open the connect_wifi.py script. Encrypt your ssid and wifi password following the instruction in **Most convenient but lease secure** section of {doc}`../030/047mpysecure`. Enter your encrypted password and the 16 digit key into the script.
+    ```{figure} /_static/025work_eg5/thonny4.png
     :width: 100%
-    :name: scd30_d2
+    :name: thonny4
     ```
+8. Open the webrepl_cfg.py script. Enter your encrypted password and the 16 digit key into the script.
 
-    b. Connect the Ground (GND) pin of HUZZAH32 to GND of SCD30 sensor.
-    ```{figure} /_static/025work_eg5/scd30_d3.jpg
-    :width: 100%
-    :name: scd30_d3
-    ```
+9. Open the reg_stapi.py script.
+    - First fill in the empty url variable in all of the functions. This is the url you are retrieving and posting your sensor results. For chaos_lab you can either post your data to
+      ```
+      https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/
+      or
+      http://chaosbox.princeton.edu:8080/FROST-Server/v1.0/
+      ```
+    - Next, posting data to the database requires user and password authorization. You have to first convert your username and password to base64 encoding. We will be using the Python base64 library. Run this script in a Python environment.
+      ```
+      import base64
+      encoded = base64.b64encode(b'user:password')
+      print(encoded)
+      >>> b'dXNlcjpwYXNzd29yZA=='
+      ```
+    -  Encrypt your base64 username password following the instruction in **Most convenient but lease secure** section of {doc}`../030/047mpysecure`. Enter your encrypted base64 username and password and the 16 digit key into the script.
+        -  The enc_val variable is at line 8
+        -  enter the 16 digit key value in all the functions, line 48, 83, 128.
 
-    c. Connect the HUZZAH32 SCL pin to SCL of the SCD30 sensor.
-    ```{figure} /_static/025work_eg5/scd30_d4.jpg
-    :width: 100%
-    :name: scd30_d4
-    ```
+10. Save all your scripts. Reset the HUZZAH32 and check the Grafana visualization. To visualize the data in Grafana, follow the instruction from **step 13-15 in the document:** ( {doc}`021work_eg1`). Instead look for the Thing and Datastream created in this exercise.
 
-    d. Connect the HUZZAH32 SDA pin to SDA of the SCD30 sensor.
-    ```{figure} /_static/025work_eg5/scd30_d5.jpg
-    :width: 100%
-    :name: scd30_d5
-    ```
-4. Refer to  **Step 4 to 15** of {doc}`021work_eg1` to register the Argon Device with the FROST-Server. For **Step 11a** use the following parameters to register the device. For **Step 12** flash the ‘STAPI_Sensirion_SCD30’ script to the device. Fill in the parameters with the datastream ID from the registered device.
+11. Once everything is working. Compile the scripts with passwords into mpy files and upload them onto the device. Following the instruction in **Most convenient but lease secure** section of {doc}`../030/047mpysecure`.
 
-
-## Securing Passwords and codes
-
-1. Highest level of security, enable secure boot and flash encrpytion. Precompile and Freeze the python module and bundle it with the firmware. Require the most amount of effort with compiling and freezing modules.
-
-    https://forum.micropython.org/viewtopic.php?t=4510
-
-    https://limitedresults.com/2019/11/pwn-the-esp32-forever-flash-encryption-and-sec-boot-keys-extraction/
-
-    https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html
-
-    https://iotworkers.com/board-development/esp32-the-secure-boot.html
-
-    https://docs.espressif.com/projects/esp-idf/en/latest/esp32/security/secure-boot-v1.html#secure-boot-reflashable
-
-    ### For Pycom boards
-    Can use these instructions for references
-    https://docs.pycom.io/advance/frozen/
-    https://docs.pycom.io/advance/encryption/
-
-2. Quite secure, but it will be very inconvenient as once the chip lose power, you will have to have physical access to the chip to restart. Store the password in memory. Once the board is restarted, all passwords are lost. https://forum.micropython.org/viewtopic.php?t=7013
-
-    ```
-    import machine
-    rtc = machine.RTC()
-    rtc.memory(b'hello')
-    ```
-
-3. Easiest and most convenient, but least secure. Encrpyt the password "https://forum.micropython.org/viewtopic.php?f=16&t=6726&p=38315&hilit=ucryptolib.aes#p38315" and compile it into .mpy file. The password will be encrypted into bytecode. The password won't be human readable. However, it is possible to reverse engineer the .mpy files and obtain the password.
-
-    ```
-    Download mpy-cross with
-
-    $ pip install mpy-cross
-
-    $ python -m mpy_cross F:\kianwee_work\spyder_workspace\upycraft\workSpace\scd30\main.py -march=xtensawin -X emit=bytecode
-
-    $ ampy -p COM4 put F:\kianwee_work\spyder_workspace\upycraft\workSpace\scd30\connect_wifi.mpy
-    ```
-4. Using wifimanager library.
-
-    ```
-    https://randomnerdtutorials.com/micropython-wi-fi-manager-esp32-esp8266/
-    ```
+12. Check again to make sure the device are running as expected.
