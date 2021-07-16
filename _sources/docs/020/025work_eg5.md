@@ -54,11 +54,11 @@ We will need the following hardwares:
       ```
 6. Once uploaded you can use Thonny to view and edit the script.
     - Fill in the mandatory parameters in the  main.py script.
-      ```{figure} /_static/025work_eg5/thonny3.png
+      ```{figure} /_static/025work_eg5/view.png
       :width: 100%
       ```
 7. Open the connect_wifi.py script. Encrypt your ssid and wifi password following the instruction in **Most convenient but lease secure** section of {doc}`../030/047mpysecure`. Enter your encrypted password and the 16 digit key into the script.
-    ```{figure} /_static/025work_eg5/thonny4.png
+    ```{figure} /_static/025work_eg5/key.png
     :width: 100%
     ```
 8. Open the webrepl_cfg.py script. Enter your encrypted password and the 16 digit key into the script.
