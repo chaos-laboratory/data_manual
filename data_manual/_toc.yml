@@ -11,6 +11,8 @@
     - file: docs/020/023work_eg3
     - file: docs/020/024work_eg4
     - file: docs/020/025work_eg5
+    - file: docs/020/026work_eg6
+    - file: docs/020/027task7
 - part: Sub-Tasks
   chapters:
     - file: docs/030/031connect_oit
@@ -30,6 +32,7 @@
     - file: docs/030/045patch
     - file: docs/030/046huzzah
     - file: docs/030/047mpysecure
+    - file: docs/030/048subtask18
 - part: Appendix
   chapters:
     - file: docs/040/influx_dbs
