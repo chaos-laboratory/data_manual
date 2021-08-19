@@ -10,7 +10,7 @@ Completed SCD30 Sensor
 ```
 
 We will need the following hardwares:
-- A Particle Argon (Can be bought [here](https://store.particle.io/products/argon))
+- A Particle Argon (Can be bought [here]())
 - USB Data Cable (Should come with your Particle Argon)
 - A SCD30 Sensor (Can be bought [here](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334))
 - Jumper Wires x 4 (Can be bought [here](https://www.adafruit.com/product/1956))
