@@ -42,11 +42,10 @@ We will need the following hardwares:
     - Connect the Etape sensor as follows.
       ```
       Etape Sensor <---> Photon  
-      Pin 2 <------------> GND
-      Pin 3 <------------> A0
-      Pin 3 <------|        
-             560ohm|
-                   |-----> 3V3         
+      Pin 2 -->--<--------> GND
+      Pin 3 -->-|<--------> A0
+          560ohm|        
+                |<-----> 3V3         
       ```
       The pins diagram of the Etape.
       ```{figure} /_static/026work_eg6/work_eg6_3.png
