@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chaos Lab Data Manual &#8212; Chaos Lab Data Manual</title>
+    <title>8. Amphenol GE2102 Thermistor with Particle Photons &#8212; Chaos Lab Data Manual</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,7 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1. SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon" href="../020/021work_eg1.html" />
+    <link rel="next" title="1. Connect to Princeton OIT Server" href="../030/031connect_oit.html" />
+    <link rel="prev" title="7. Grove - EC &amp; PH Sensor Kit with Particle Photons" href="027task7.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -84,8 +85,8 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../010/010intro.html">
    Chaos Lab Data Manual
   </a>
  </li>
@@ -95,44 +96,44 @@
   Tasks
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/021work_eg1.html">
+  <a class="reference internal" href="021work_eg1.html">
    1. SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/022work_eg2.html">
+  <a class="reference internal" href="022work_eg2.html">
    2. Get Data from Desigo and Post to FROST-Server
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/023work_eg3.html">
+  <a class="reference internal" href="023work_eg3.html">
    3. Amphenol Telaire T6713 CO2 Sensors with Particle Argon
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/024work_eg4.html">
+  <a class="reference internal" href="024work_eg4.html">
    4. Sensirion SCD30 CO2 Sensors with Particle Argon
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/025work_eg5.html">
+  <a class="reference internal" href="025work_eg5.html">
    5. Sensirion SCD30 CO2 Sensors with HUZZAH32
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/026work_eg6.html">
+  <a class="reference internal" href="026work_eg6.html">
    6. Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible - RCWL-1601 &amp; Etape Sensor with Particle Photons
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../020/027task7.html">
+  <a class="reference internal" href="027task7.html">
    7. Grove - EC &amp; PH Sensor Kit with Particle Photons
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../020/028task8.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    8. Amphenol GE2102 Thermistor with Particle Photons
   </a>
  </li>
@@ -285,7 +286,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/010/010intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/020/028task8.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -305,7 +306,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/010/010intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/028task8.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -326,22 +327,6 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-the-book">
-   How to use the book
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-        </nav>
-        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -349,19 +334,80 @@
         
               <div>
                 
-  <div class="section" id="chaos-lab-data-manual">
-<h1>Chaos Lab Data Manual<a class="headerlink" href="#chaos-lab-data-manual" title="Permalink to this headline">¶</a></h1>
-<p>This is the Chaos Lab Data Manual. For all your data needs refer to this manual. This manual is divided into 2 main chapters Tasks and Sub-Tasks. Tasks are processes that requires the execution of multiple sub-tasks.</p>
-<div class="section" id="how-to-use-the-book">
-<h2>How to use the book<a class="headerlink" href="#how-to-use-the-book" title="Permalink to this headline">¶</a></h2>
-<p>Use the bar to search for the task you want to achieve.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="amphenol-ge2102-thermistor-with-particle-photons">
+<h1><span class="section-number">8. </span>Amphenol GE2102 Thermistor with Particle Photons<a class="headerlink" href="#amphenol-ge2102-thermistor-with-particle-photons" title="Permalink to this headline">¶</a></h1>
+<p>This the sensor we are going to build in this exercise.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/028task8_1.jpg"><img alt="../../_images/028task8_1.jpg" src="../../_images/028task8_1.jpg" style="width: 50%;" /></a>
 </div>
-<div class="toctree-wrapper compound">
+<p>This guide is based on these materials:</p>
+<ul class="simple">
+<li><p>The GE2102 Sensors</p>
+<ul>
+<li><p><a href="https://learn.adafruit.com/thermistor/using-a-thermistor" target="_blank">source 1</a></p></li>
+</ul>
+</li>
+</ul>
+<p>We will need the following hardwares:</p>
+<ul class="simple">
+<li><p>A Particle Photon, it will work with Argon too (Can be bought <a href="https://store.particle.io/collections/gen-2/products/photon" target="_blank">here</a>)</p></li>
+<li><p>USB Data Cable</p></li>
+<li><p>Amphenol GE2102 (Can be bought <a href="https://www.digikey.com/en/products/detail/amphenol-advanced-sensors/GE-2102/7261436" target="_blank">here</a>)</p></li>
+<li><p>Jumper Wires x 4 (Can be bought <a href="https://www.adafruit.com/product/1956" target="_blank">here</a>)</p></li>
+<li><p>Breadboard (Can be bought <a href="https://www.amazon.com/dp/B07DL13RZH/ref=redir_mobile_desktop?_encoding=UTF8&aaxitk=Ha8lI6PHb2sFCtkeyNViLQ&hsa_cr_id=4991273630901&pd_rd_plhdr=t&pd_rd_r=e429b428-9c18-43cc-bdb2-24937613797e&pd_rd_w=SmgRr&pd_rd_wg=zw5Ku&ref_=sbx_be_s_sparkle_mcd_asin_0_img" target="_blank">here</a>)</p></li>
+<li><p>Soldering Kit (Can be bought <a href="https://www.amazon.com/Soldering-Iron-Kit-Temperature-Desoldering/dp/B073VDX4B7/ref=sr_1_1_sspa?crid=3TI8MUBYG9QXZ&dchild=1&keywords=soldering+kit&qid=1615313665&s=industrial&sprefix=soldering%2Cindustrial%2C166&sr=1-1-spons&psc=1&smid=A1XLBTH0MIQMMO&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFHUTdTSUtLUkdESUQmZW5jcnlwdGVkSWQ9QTAzODE3MjcyS0REVDQ5U1JLSVk4JmVuY3J5cHRlZEFkSWQ9QTAxMjYzMDYxOTk2N0ZMSjdVUVI2JndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==" target="_blank">here</a>)</p></li>
+<li><p>Laptop or Computer</p></li>
+</ul>
+<ol>
+<li><p>Connect the Photon and GE2102 Sensor onto the breadboard as shown in the figures.
+</Br><Br/></p>
+<ul>
+<li><p>Connect the GE2102 sensor as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GE2102</span> <span class="o">&lt;---&gt;</span> <span class="n">Photon</span>  
+<span class="n">Pin</span> <span class="mi">1</span>  <span class="o">-&gt;--&lt;--------&gt;</span> <span class="n">GND</span>
+<span class="n">Pin</span> <span class="mi">2</span>  <span class="o">-&gt;-|&lt;--------&gt;</span> <span class="n">A0</span>
+    <span class="mi">10</span><span class="n">Kohm</span><span class="o">|</span>        
+          <span class="o">|&lt;-----&gt;</span> <span class="mi">3</span><span class="n">V3</span>         
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/028task8_1.jpg"><img alt="../../_images/028task8_1.jpg" src="../../_images/028task8_1.jpg" style="width: 100%;" /></a>
 </div>
+</li>
+</ul>
+</li>
+<li><p>Refer to  <strong>Step 4 to 9</strong> of <a class="reference internal" href="021work_eg1.html"><span class="doc">SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</span></a> to register the Photon Device with our Particle account.</p></li>
+<li><p>Flash the script <strong>‘STAPI_1_GE2102’</strong> to the Photon. Fill in the mandatory parameters accordingly. You can choose to leave the optional parameters to their default values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*=============================================================================================================================================
+!!! MANDATORY PARAMETERS
+=============================================================================================================================================*/
+// the value of the &#39;other&#39; resistor
+#define SERIESRESISTOR 10000    
+// What pin to connect the sensor to
+#define SENSORPIN A0
+
+String thingDesc = &quot;liquid temp&quot;; //DESCRIBE THE DEPLOYMENT
+int sample_rate = 1 * 1000; // how often you want device to publish where the number in front of a thousand is the seconds you want
+/*=============================================================================================================================================
+OPTIONAL PARAMETERS
+(this parameters only works when it is the first time registration of the device)
+(if the device is already registered, these options are ignored)
+=============================================================================================================================================*/
+//Description of the location
+String foiName = &quot;na&quot;; //THE LOCATION NAME
+String foiDesc = &quot;na&quot;;
+//Define the geometry of the location. Geometry types from geojson is accepted. Refer to https://tools.ietf.org/html/rfc7946 for geometry types.
+String locType = &quot;Point&quot;;
+String enType = &quot;application/vnd.geo+json&quot;;
+//Define the location of the thing. If location is not impt, use [0,0,0] the null island position.
+float coordx = 0.0; //lon/x
+float coordy = 0.0; //lat/y
+float coordz = 0.0; //elv/z
+</pre></div>
 </div>
+</li>
+<li><p>Refer to  <strong>Step 13 to 15</strong> of <a class="reference internal" href="021work_eg1.html"><span class="doc">SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</span></a> to visualize the data on Grafana.</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -377,7 +423,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./docs\010"
+            path: "./docs\020"
         },
         predefinedOutput: true
     }
@@ -392,7 +438,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="../020/021work_eg1.html" title="next page"><span class="section-number">1. </span>SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</a>
+    <a class='left-prev' id="prev-link" href="027task7.html" title="previous page"><span class="section-number">7. </span>Grove - EC &amp; PH Sensor Kit with Particle Photons</a>
+    <a class='right-next' id="next-link" href="../030/031connect_oit.html" title="next page"><span class="section-number">1. </span>Connect to Princeton OIT Server</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

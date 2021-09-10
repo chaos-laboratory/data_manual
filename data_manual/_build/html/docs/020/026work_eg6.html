@@ -55,7 +55,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible - RCWL-1601 &amp; Etape Sensor with Particle Photons" href="027task7.html" />
+    <link rel="next" title="7. Grove - EC &amp; PH Sensor Kit with Particle Photons" href="027task7.html" />
     <link rel="prev" title="5. Sensirion SCD30 CO2 Sensors with HUZZAH32" href="025work_eg5.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -129,7 +129,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="027task7.html">
-   7. Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible - RCWL-1601 &amp; Etape Sensor with Particle Photons
+   7. Grove - EC &amp; PH Sensor Kit with Particle Photons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="028task8.html">
+   8. Amphenol GE2102 Thermistor with Particle Photons
   </a>
  </li>
 </ul>
@@ -379,11 +384,10 @@
 </li>
 <li><p>Connect the Etape sensor as follows.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Etape</span> <span class="n">Sensor</span> <span class="o">&lt;---&gt;</span> <span class="n">Photon</span>  
-<span class="n">Pin</span> <span class="mi">2</span> <span class="o">&lt;------------&gt;</span> <span class="n">GND</span>
-<span class="n">Pin</span> <span class="mi">3</span> <span class="o">&lt;------------&gt;</span> <span class="n">A0</span>
-<span class="n">Pin</span> <span class="mi">3</span> <span class="o">&lt;------|</span>        
-       <span class="mi">560</span><span class="n">ohm</span><span class="o">|</span>
-             <span class="o">|-----&gt;</span> <span class="mi">3</span><span class="n">V3</span>         
+<span class="n">Pin</span> <span class="mi">2</span> <span class="o">--&gt;--&lt;--------&gt;</span> <span class="n">GND</span>
+<span class="n">Pin</span> <span class="mi">3</span> <span class="o">--&gt;-|&lt;--------&gt;</span> <span class="n">A0</span>
+    <span class="mi">560</span><span class="n">ohm</span><span class="o">|</span>        
+          <span class="o">|&lt;-----&gt;</span> <span class="mi">3</span><span class="n">V3</span>         
 </pre></div>
 </div>
 <p>The pins diagram of the Etape.</p>
@@ -587,7 +591,7 @@ float coordz = 0.0; //elv/z
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="025work_eg5.html" title="previous page"><span class="section-number">5. </span>Sensirion SCD30 CO2 Sensors with HUZZAH32</a>
-    <a class='right-next' id="next-link" href="027task7.html" title="next page"><span class="section-number">7. </span>Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible - RCWL-1601 &amp; Etape Sensor with Particle Photons</a>
+    <a class='right-next' id="next-link" href="027task7.html" title="next page"><span class="section-number">7. </span>Grove - EC &amp; PH Sensor Kit with Particle Photons</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
