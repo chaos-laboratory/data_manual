@@ -57,76 +57,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="10. Chaos Lab Database Tutorial" href="0210task10.html" />
@@ -435,6 +365,62 @@
                 
   <div class="section" id="digiten-water-flow-sensor-fl408-with-particle-photons">
 <h1><span class="section-number">9. </span>Digiten Water Flow Sensor FL408 with Particle Photons<a class="headerlink" href="#digiten-water-flow-sensor-fl408-with-particle-photons" title="Permalink to this headline">¶</a></h1>
+<p>This the sensor we are going to build in this exercise.</p>
+<p>We will need the following hardwares:</p>
+<ul class="simple">
+<li><p>A Particle Photon, it will work with Argon too (Can be bought <a href="https://store.particle.io/collections/gen-2/products/photon" target="_blank">here</a>)</p></li>
+<li><p>USB Data Cable</p></li>
+<li><p>Digiten Water Flow Sensor FL408 (Can be bought <a href="https://www.amazon.com/DIGITEN-Sensor-Switch-Flowmeter-Counter/dp/B00VKATCRQ" target="_blank">here</a>)</p></li>
+<li><p>Jumper Wires (Can be bought <a href="https://www.adafruit.com/product/1956" target="_blank">here</a>)</p></li>
+<li><p>Breadboard (Can be bought <a href="https://www.amazon.com/dp/B07DL13RZH/ref=redir_mobile_desktop?_encoding=UTF8&aaxitk=Ha8lI6PHb2sFCtkeyNViLQ&hsa_cr_id=4991273630901&pd_rd_plhdr=t&pd_rd_r=e429b428-9c18-43cc-bdb2-24937613797e&pd_rd_w=SmgRr&pd_rd_wg=zw5Ku&ref_=sbx_be_s_sparkle_mcd_asin_0_img" target="_blank">here</a>)</p></li>
+<li><p>Soldering Kit (Can be bought <a href="https://www.amazon.com/Soldering-Iron-Kit-Temperature-Desoldering/dp/B073VDX4B7/ref=sr_1_1_sspa?crid=3TI8MUBYG9QXZ&dchild=1&keywords=soldering+kit&qid=1615313665&s=industrial&sprefix=soldering%2Cindustrial%2C166&sr=1-1-spons&psc=1&smid=A1XLBTH0MIQMMO&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFHUTdTSUtLUkdESUQmZW5jcnlwdGVkSWQ9QTAzODE3MjcyS0REVDQ5U1JLSVk4JmVuY3J5cHRlZEFkSWQ9QTAxMjYzMDYxOTk2N0ZMSjdVUVI2JndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==" target="_blank">here</a>)</p></li>
+<li><p>Laptop or Computer</p></li>
+</ul>
+<ol>
+<li><p>Connect the Photon and FL408 Sensor onto the breadboard as shown in the figures.
+</Br><Br/></p>
+<ul>
+<li><p>Connect the FL408 sensor as follows.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FL408</span> <span class="o">&lt;---&gt;</span> <span class="n">Photon</span>  
+<span class="n">Red</span>    <span class="o">&lt;--------&gt;</span> <span class="n">Vin</span>
+<span class="n">Black</span>  <span class="o">&lt;--------&gt;</span> <span class="n">GND</span>
+<span class="n">Yellow</span> <span class="o">&lt;--------&gt;</span> <span class="n">D2</span>         
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Refer to  <strong>Step 4 to 9</strong> of <a class="reference internal" href="021work_eg1.html"><span class="doc">SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</span></a> to register the Photon Device with our Particle account.</p></li>
+<li><p>Flash the script <strong>‘STAPI_1_FL408’</strong> to the Photon. Fill in the mandatory parameters accordingly. You can choose to leave the optional parameters to their default values.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*=============================================================================================================================================
+!!! MANDATORY PARAMETERS
+=============================================================================================================================================*/
+// Water sensor digital pin
+String thingDesc = &quot;flow&quot;; //DESCRIBE THE DEPLOYMENT
+int sample_rate = 10 * 1000; // how often you want device to publish where the number in front of a thousand is the seconds you want
+/*=============================================================================================================================================
+OPTIONAL PARAMETERS
+(this parameters only works when it is the first time registration of the device)
+(if the device is already registered, these options are ignored)
+=============================================================================================================================================*/
+//Description of the location
+String foiName = &quot;na&quot;; //THE LOCATION NAME
+String foiDesc = &quot;na&quot;;
+//Define the geometry of the location. Geometry types from geojson is accepted. Refer to https://tools.ietf.org/html/rfc7946 for geometry types.
+String locType = &quot;Point&quot;;
+String enType = &quot;application/vnd.geo+json&quot;;
+//Define the location of the thing. If location is not impt, use [0,0,0] the null island position.
+float coordx = 0.0; //lon/x
+float coordy = 0.0; //lat/y
+float coordz = 0.0; //elv/z
+/*=============================================================================================================================================
+END
+=============================================================================================================================================*/
+</pre></div>
+</div>
+</li>
+<li><p>Refer to  <strong>Step 13 to 15</strong> of <a class="reference internal" href="021work_eg1.html"><span class="doc">SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon</span></a> to visualize the data on Grafana.</p></li>
+</ol>
 </div>
 
     <script type="text/x-thebe-config">
