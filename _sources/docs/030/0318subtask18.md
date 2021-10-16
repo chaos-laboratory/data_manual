@@ -1,0 +1,38 @@
+# Register Particle Device
+
+1. For use in Princeton Campus, please register your device with servicenet. Follow the instruction here {doc}`../030/0310particle_servicenet`. You will need to register the smart phone you will use to register your particle device with the servicenet too.
+</Br><Br/>
+2. Register and setup your Particle device with our chaos lab particle account (You can do it with your own Particle account too). For login information to the Chaos account please approach members of the lab. Follow the instruction [here](https://setup.particle.io/).
+    </Br><Br/>
+    a. Sometimes, you might have some problem with registering. Doing a factory reset on the Argon might be useful. [Instructions to doing a factory reset](https://community.particle.io/t/how-to-do-a-factory-reset/2579). A summary is provided here.
+
+    ```
+    1) Begin holding the MODE button down.
+    2) While holding the MODE button down, tap the RESET button briefly.
+    3) After 3 seconds the core will begin blinking yellow, KEEP HOLDING the MODE button.
+    4) After 10 seconds the core will begin blinking white.
+    When this happens the factory reset process has begun. Let go of the MODE button.
+    ```
+
+3. Once your device is registered, go to the [particle web console](https://console.particle.io/devices). Check if the device is on the list.
+    ```{figure} /_static/0318subtask18/particle_console.png
+    :width: 100%
+    :name: particle_console
+
+    We have named our Argon HYDRO_ARG001.
+    ```
+4. Go to the [Web IDE](https://build.particle.io/build/new). Go to the Devices tab, star the device that you have registered.
+    ```{figure} /_static/0318subtask18/web_ide.png
+    :width: 100%
+    :name: web_ide
+
+    Star Argon HYDRO_ARG001, so we can flash to the device.
+    ```
+5. Click on the code option on the left side bar. In the search bar for 'My apps' search for 'STAPI'. You will see a series of STAPIXX_XXX scripts.
+    ```{figure} /_static/0318subtask18/web_ide2.png
+    :width: 100%
+    :name: web_ide2
+
+    STAPIxx series of scripts
+    ```
+6. For a general description of the integration of Particle with our database (FROST-Server) refer to [here](https://chenkianwee.github.io/masa3db/docs/040/042particle.html).

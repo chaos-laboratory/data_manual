@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14. Downloading Docker Image Locally &#8212; Chaos Lab Data Manual</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15. Instructions to Backup Influxdb 1.2 (installed on chaosbox)" href="0305backup_influx.html" />
+    <link rel="prev" title="13. Install Docker on OIT Server" href="0303install_docker.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Chaos Lab Data Manual</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../010/010intro.html">
+   Chaos Lab Data Manual
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tasks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0201task01.html">
+   1. SHT31 Air Temperature &amp; Humidity Sensor with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0202task02.html">
+   2. Get Data from Desigo and Post to FROST-Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0203task03.html">
+   3. Amphenol Telaire T6713 CO2 Sensors with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0204task04.html">
+   4. Sensirion SCD30 CO2 Sensors with Particle Argon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0205task05.html">
+   5. Sensirion SCD30 CO2 Sensors with HUZZAH32
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0206task06.html">
+   6. Ultrasonic Distance Sensor - 3V or 5V - HC-SR04 compatible - RCWL-1601 &amp; Etape Sensor with Particle Photons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0207task07.html">
+   7. Grove - EC &amp; PH Sensor Kit with Particle Photons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0208task08.html">
+   8. Amphenol GE2102 Thermistor with Particle Photons
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../020/0209task09.html">
+   9. Digiten Water Flow Sensor FL408 with Particle Photons
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../020/0210task10.html">
+   10. Chaos Lab Database Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../020/0210task10_1.html">
+     10.1. Chaos Database Tutorial 1 - Sensorthings API data model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../020/0210task10_2.html">
+     10.2. Chaos Database Tutorial 2 - REST-based Sensorthings API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../020/0210task10_3.html">
+     10.3. Posting to the FROST-Server (Sensorthings API database) using Particle.io Devices
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sub-Tasks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0301connect_oit.html">
+   11. Connect to Princeton OIT Server
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0302chaosbox.html">
+   12. Connect to Chaosbox
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0303install_docker.html">
+   13. Install Docker on OIT Server
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   14. Downloading Docker Image Locally
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0305backup_influx.html">
+   15. Instructions to Backup Influxdb 1.2 (installed on chaosbox)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0306restore_influx.html">
+   16. Restore data to InfluxDB 1.8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0307access_influx.html">
+   17. Access InfluxDB
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0308ssl_cert.html">
+   18. Request for SSL Certificate from Princeton
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0309mv_dockervar.html">
+   19. Move Docker Data Folder to /app Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0310particle_servicenet.html">
+   20. Connect Particle to Servicenet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0311reg_sensor_obsprop.html">
+   21. Register Sensor and ObservedProperties to Our Database
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0312advance_analytics.html">
+   22. Advance Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0313del_thing.html">
+   23. Delete a Thing with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0314patch.html">
+   24. Patch a Datastream with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0315huzzah.html">
+   25. Micropython on HUZZAH32
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0316mpysecure.html">
+   26. Securing Passwords and codes - Micropython
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0317subtask17.html">
+   27. Getting started with WIO Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0318subtask18.html">
+   28. Register Particle Device
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="0319subtask19.html">
+   29. Visualise with Grafana
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Appendix
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../040/influx_dbs.html">
+   30. Information on the databases in InfluxDB (Chaos Legacy DB)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/030/0304local_dimage.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/030/0304local_dimage.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="downloading-docker-image-locally">
+<h1><span class="section-number">14. </span>Downloading Docker Image Locally<a class="headerlink" href="#downloading-docker-image-locally" title="Permalink to this headline">¶</a></h1>
+<ol>
+<li><p>Download Docker image with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker save fraunhoferiosb/frost-server:latest &gt; frost-server.tar
+</pre></div>
+</div>
+</li>
+<li><p>Load the image with this command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker load -i frost-server.tar
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs\030"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="0303install_docker.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">13. </span>Install Docker on OIT Server</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="0305backup_influx.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">15. </span>Instructions to Backup Influxdb 1.2 (installed on chaosbox)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Chaos Lab<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
