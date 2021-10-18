@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Connect to Princeton OIT Server" href="../030/0301connect_oit.html" />
+    <link rel="next" title="10.4. Under the Hood" href="0210task10_4.html" />
     <link rel="prev" title="10.2. Chaos Database Tutorial 2 - REST-based Sensorthings API" href="0210task10_2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -162,6 +162,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      10.3. Posting to the FROST-Server (Sensorthings API database) using Particle.io Devices
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="0210task10_4.html">
+     10.4. Under the Hood
     </a>
    </li>
   </ul>
@@ -786,6 +791,7 @@ String appName = &quot;NEWAPP&quot;;
 </div>
 </li>
 <li><p>Refer to  <a class="reference internal" href="../030/0319subtask19.html"><span class="doc">Visualise with Grafana</span></a> to visualize the data on Grafana.</p></li>
+<li><p>This script can be reused for the same setup <strong>Particle device + 1 SHT31 sensor</strong>. If you want to register a new entry with the same Particle device, you just need to change the deployment parameter. The script always looks for Thing with the same name, device uid and deployment. Only if the database has a thing with the same name, device uid and deployment, it will return the id of the Thing, if not found the script will register a new Thing entry.</p></li>
 </ol>
 </div>
 
@@ -828,10 +834,10 @@ String appName = &quot;NEWAPP&quot;;
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../030/0301connect_oit.html" title="next page">
+        <a class="right-next" href="0210task10_4.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">11. </span>Connect to Princeton OIT Server</p>
+                <p class="prevnext-title"><span class="section-number">10.4. </span>Under the Hood</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

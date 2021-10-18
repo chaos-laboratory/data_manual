@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Sensirion SCD30 CO2 Sensors with Particle Argon &#8212; Chaos Lab Data Manual</title>
+    <title>10.4. Under the Hood &#8212; Chaos Lab Data Manual</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Sensirion SCD30 CO2 Sensors with HUZZAH32" href="0205task05.html" />
-    <link rel="prev" title="3. Amphenol Telaire T6713 CO2 Sensors with Particle Argon" href="0203task03.html" />
+    <link rel="next" title="11. Connect to Princeton OIT Server" href="../030/0301connect_oit.html" />
+    <link rel="prev" title="10.3. Posting to the FROST-Server (Sensorthings API database) using Particle.io Devices" href="0210task10_3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -109,8 +109,8 @@
    3. Amphenol Telaire T6713 CO2 Sensors with Particle Argon
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0204task04.html">
    4. Sensirion SCD30 CO2 Sensors with Particle Argon
   </a>
  </li>
@@ -139,16 +139,16 @@
    9. Digiten Water Flow Sensor FL408 with Particle Photons
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="0210task10.html">
    10. Chaos Lab Database Tutorial
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="0210task10_1.html">
      10.1. Chaos Database Tutorial 1 - Sensorthings API data model
@@ -164,8 +164,8 @@
      10.3. Posting to the FROST-Server (Sensorthings API database) using Particle.io Devices
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0210task10_4.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      10.4. Under the Hood
     </a>
    </li>
@@ -326,7 +326,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/020/0204task04.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/020/0210task10_4.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -346,7 +346,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/0204task04.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/020/0210task10_4.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -367,6 +367,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#webhooks">
+   10.4.1. Webhooks
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -375,75 +388,16 @@
         
               <div>
                 
-  <div class="section" id="sensirion-scd30-co2-sensors-with-particle-argon">
-<h1><span class="section-number">4. </span>Sensirion SCD30 CO2 Sensors with Particle Argon<a class="headerlink" href="#sensirion-scd30-co2-sensors-with-particle-argon" title="Permalink to this headline">¶</a></h1>
-<p>This the sensor we are going to build in this exercise.</p>
-<div class="figure align-default" id="scd-d1">
-<a class="reference internal image-reference" href="../../_images/scd30_d1.png"><img alt="../../_images/scd30_d1.png" src="../../_images/scd30_d1.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Completed SCD30 Sensor</span><a class="headerlink" href="#scd-d1" title="Permalink to this image">¶</a></p>
+  <div class="section" id="under-the-hood">
+<h1><span class="section-number">10.4. </span>Under the Hood<a class="headerlink" href="#under-the-hood" title="Permalink to this headline">¶</a></h1>
+<p>So what is happening under the hood. The diagram illustrates the various mechanisms that are used. The particle device is connected to the <a class="reference external" href="http://particle.io">particle.io</a> cloud. We flash the code to the particle device through using the particle web ide. The code instructs the device to read data from the sensor, publish the result on <a class="reference external" href="http://particle.io">particle.io</a> cloud. The publish statement will trigger the respective webhooks and post the data to the FROST-Server. Once it is posted to the FROST-Server, we can pull data and visualise it with Grafana or any other visualisation software.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/img1.png"><img alt="../../_images/img1.png" src="../../_images/img1.png" style="width: 100%;" /></a>
 </div>
-<p>We will need the following hardwares:</p>
-<ul class="simple">
-<li><p>A Particle Argon (Can be bought <a class="reference external" href="https://store.particle.io/products/argon">here</a>)</p></li>
-<li><p>USB Data Cable (Should come with your Particle Argon)</p></li>
-<li><p>A SCD30 Sensor (Can be bought <a class="reference external" href="https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334">here</a>)</p></li>
-<li><p>Jumper Wires x 4 (Can be bought <a class="reference external" href="https://www.adafruit.com/product/1956">here</a>)</p></li>
-<li><p>Breadboard (Can be bought <a class="reference external" href="https://www.amazon.com/dp/B07DL13RZH/ref=redir_mobile_desktop?_encoding=UTF8&amp;aaxitk=Ha8lI6PHb2sFCtkeyNViLQ&amp;hsa_cr_id=4991273630901&amp;pd_rd_plhdr=t&amp;pd_rd_r=e429b428-9c18-43cc-bdb2-24937613797e&amp;pd_rd_w=SmgRr&amp;pd_rd_wg=zw5Ku&amp;ref_=sbx_be_s_sparkle_mcd_asin_0_img">here</a>)</p></li>
-<li><p>Soldering Kit (Can be bought <a class="reference external" href="https://www.amazon.com/Soldering-Iron-Kit-Temperature-Desoldering/dp/B073VDX4B7/ref=sr_1_1_sspa?crid=3TI8MUBYG9QXZ&amp;dchild=1&amp;keywords=soldering+kit&amp;qid=1615313665&amp;s=industrial&amp;sprefix=soldering%2Cindustrial%2C166&amp;sr=1-1-spons&amp;psc=1&amp;smid=A1XLBTH0MIQMMO&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFHUTdTSUtLUkdESUQmZW5jcnlwdGVkSWQ9QTAzODE3MjcyS0REVDQ5U1JLSVk4JmVuY3J5cHRlZEFkSWQ9QTAxMjYzMDYxOTk2N0ZMSjdVUVI2JndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==">here</a>)</p></li>
-<li><p>Laptop and Smart phone</p></li>
-</ul>
-<ol>
-<li><p>Connect the Antenna to the Argon as shown in the previous figure.
-</Br><Br/></p></li>
-<li><p>Solder the header to your SCD30. Follow similar soldering instructions <a class="reference external" href="https://learn.adafruit.com/adafruit-sht31-d-temperature-and-humidity-sensor-breakout/assembly">here</a>.
-</Br><Br/></p></li>
-<li><p>Connect the Argon and SCD30 onto the breadboard as shown in the previous figure. Wire up the Argon and the sensor as follows:
-</Br><Br/>
-a.  Connect the 3x3 pin of the Argon to VIN of the SCD30 sensor.</p>
-<div class="figure align-default" id="scd30-d2">
-<a class="reference internal image-reference" href="../../_images/scd30_d2.png"><img alt="../../_images/scd30_d2.png" src="../../_images/scd30_d2.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">3v3 to VIN pin.</span><a class="headerlink" href="#scd30-d2" title="Permalink to this image">¶</a></p>
+<div class="section" id="webhooks">
+<h2><span class="section-number">10.4.1. </span>Webhooks<a class="headerlink" href="#webhooks" title="Permalink to this headline">¶</a></h2>
+<p>For more information on the webhook integration. Refer to this entry <a href="https://chenkianwee.github.io/masa3db/docs/050/052webhooks.html" target="_blank">https://chenkianwee.github.io/masa3db/docs/050/052webhooks.html</a></p>
 </div>
-<p>b. Connect the Ground (GND) pin of Argon to GND of SCD30 sensor.</p>
-<div class="figure align-default" id="scd30-d3">
-<a class="reference internal image-reference" href="../../_images/scd30_d3.png"><img alt="../../_images/scd30_d3.png" src="../../_images/scd30_d3.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">GND to GND pin.</span><a class="headerlink" href="#scd30-d3" title="Permalink to this image">¶</a></p>
-</div>
-<p>c. Connect the Argon SCL pin to SCL of the SCD30 sensor.</p>
-<div class="figure align-default" id="scd30-d4">
-<a class="reference internal image-reference" href="../../_images/scd30_d4.png"><img alt="../../_images/scd30_d4.png" src="../../_images/scd30_d4.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">SCL to SCL pin.</span><a class="headerlink" href="#scd30-d4" title="Permalink to this image">¶</a></p>
-</div>
-<p>d. Connect the Argon SDA pin to SDA of the SCD30 sensor.</p>
-<div class="figure align-default" id="scd30-d5">
-<a class="reference internal image-reference" href="../../_images/scd30_d5.png"><img alt="../../_images/scd30_d5.png" src="../../_images/scd30_d5.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">SDA to SDA.</span><a class="headerlink" href="#scd30-d5" title="Permalink to this image">¶</a></p>
-</div>
-</li>
-<li><p>Refer to <a class="reference internal" href="../030/0318subtask18.html"><span class="doc">Register Particle Device</span></a> to register the Argon Device with our Particle account.</p></li>
-<li><p>Flash the script <strong>‘STAPI_1_scd30’</strong> to the Argon. Fill in the mandatory parameters accordingly. You can choose to leave the optional parameters to their default values.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>===================================================================================================================
-!!! MANDATORY PARAMETERS
-===================================================================================================================
-String thingDesc = &quot;for scd30&quot;; //DESCRIBE THE DEPLOYMENT
-int sample_rate = 10 * 1000; // how often you want device to publish where the number in front of a thousand is the seconds you want
-===================================================================================================================
-OPTIONAL PARAMETERS (if the device is already registered, these options are ignored)
-===================================================================================================================
-//Description of the location
-String foiName = &quot;na&quot;; //THE LOCATION NAME
-String foiDesc = &quot;na&quot;;//Define the geometry of the location. Refer to https://tools.ietf.org/html/rfc7946 for geometry types.
-String locType = &quot;Point&quot;;
-String enType = &quot;application/vnd.geo+json&quot;;
-//Define the location of the thing. If location is not impt, use [0,0,0] the null island position.
-float coordx = 0.0; //lon/x
-float coordy = 0.0; //lat/y
-float coordz = 0.0; //elv/z
-</pre></div>
-</div>
-</li>
-<li><p>Refer to  <a class="reference internal" href="../030/0319subtask19.html"><span class="doc">Visualise with Grafana</span></a> to visualize the data on Grafana.</p></li>
-</ol>
 </div>
 
     <script type="text/x-thebe-config">
@@ -476,19 +430,19 @@ float coordz = 0.0; //elv/z
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="0203task03.html" title="previous page">
+        <a class="left-prev" href="0210task10_3.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3. </span>Amphenol Telaire T6713 CO2 Sensors with Particle Argon</p>
+                <p class="prevnext-title"><span class="section-number">10.3. </span>Posting to the FROST-Server (Sensorthings API database) using Particle.io Devices</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="0205task05.html" title="next page">
+        <a class="right-next" href="../030/0301connect_oit.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">5. </span>Sensirion SCD30 CO2 Sensors with HUZZAH32</p>
+                <p class="prevnext-title"><span class="section-number">11. </span>Connect to Princeton OIT Server</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
