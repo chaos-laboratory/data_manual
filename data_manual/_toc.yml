@@ -1,39 +1,54 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
-- file: docs/010/010intro
+format: jb-book
+root: docs/010/010intro
+parts:
+- caption: Tasks
   numbered: true
-
-- part: Tasks
   chapters:
-    - file: docs/020/021work_eg1
-    - file: docs/020/022work_eg2
-    - file: docs/020/023work_eg3
-    - file: docs/020/024work_eg4
-    - file: docs/020/025work_eg5
-    - file: docs/020/026work_eg6
-    - file: docs/020/027task7
-    - file: docs/020/028task8
-- part: Sub-Tasks
+  - file: docs/020/0201task01
+  - file: docs/020/0202task02
+  - file: docs/020/0203task03
+  - file: docs/020/0204task04
+  - file: docs/020/0205task05
+  - file: docs/020/0206task06
+  - file: docs/020/0207task07
+  - file: docs/020/0208task08
+  - file: docs/020/0209task09
+  - file: docs/020/0210task10
+    sections:
+    - file: docs/020/0210task10_1
+    - file: docs/020/0210task10_2
+    - file: docs/020/0210task10_3
+    - file: docs/020/0210task10_4
+  - file: docs/020/0211task11
+  - file: docs/020/0212task12
+  - file: docs/020/0213task13
+  - file: docs/020/0214task14
+  - file: docs/020/0215task15
+  - file: docs/020/0216task16
+- caption: Sub-Tasks
+  numbered: true
   chapters:
-    - file: docs/030/031connect_oit
-    - file: docs/030/032chaosbox
-    - file: docs/030/033install_docker
-    - file: docs/030/034local_dimage
-    - file: docs/030/035backup_influx
-    - file: docs/030/036restore_influx
-    - file: docs/030/037access_influx
-    - file: docs/030/038ssl_cert
-    - file: docs/030/039mv_dockervar
-    - file: docs/030/040particle_servicenet
-    - file: docs/030/041reg_sensor_obsprop
-    - file: docs/030/042advance_analytics
-    - file: docs/030/043new_deploy
-    - file: docs/030/044del_thing
-    - file: docs/030/045patch
-    - file: docs/030/046huzzah
-    - file: docs/030/047mpysecure
-    - file: docs/030/048subtask18
-- part: Appendix
+  - file: docs/030/0301connect_oit
+  - file: docs/030/0302chaosbox
+  - file: docs/030/0303install_docker
+  - file: docs/030/0304local_dimage
+  - file: docs/030/0305backup_influx
+  - file: docs/030/0306restore_influx
+  - file: docs/030/0307access_influx
+  - file: docs/030/0308ssl_cert
+  - file: docs/030/0309mv_dockervar
+  - file: docs/030/0310particle_servicenet
+  - file: docs/030/0311reg_sensor_obsprop
+  - file: docs/030/0312advance_analytics
+  - file: docs/030/0313del_thing
+  - file: docs/030/0314patch
+  - file: docs/030/0315huzzah
+  - file: docs/030/0316mpysecure
+  - file: docs/030/0317subtask17
+  - file: docs/030/0318subtask18
+  - file: docs/030/0319subtask19
+  - file: docs/030/0320subtask20
+- caption: Appendix
+  numbered: true
   chapters:
-    - file: docs/040/influx_dbs
+  - file: docs/040/influx_dbs
