@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>18. Backup OIT Database &#8212; Chaos Lab Data Manual</title>
+    <title>18. Database Maintenance &#8212; Chaos Lab Data Manual</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -208,7 +208,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   18. Backup OIT Database
+   18. Database Maintenance
   </a>
  </li>
 </ul>
@@ -407,6 +407,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#backup-oit-database">
+   18.1. Backup OIT Database
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#server-down-docker-restart-issue">
+   18.2. Server Down - Docker Restart Issue
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -415,8 +433,10 @@
         
               <div>
                 
-  <div class="section" id="backup-oit-database">
-<h1><span class="section-number">18. </span>Backup OIT Database<a class="headerlink" href="#backup-oit-database" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="database-maintenance">
+<h1><span class="section-number">18. </span>Database Maintenance<a class="headerlink" href="#database-maintenance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="backup-oit-database">
+<h2><span class="section-number">18.1. </span>Backup OIT Database<a class="headerlink" href="#backup-oit-database" title="Permalink to this headline">¶</a></h2>
 <ol>
 <li><p>Log on to the OIT server following sub-task <a class="reference internal" href="../030/0301connect_oit.html"><span class="doc">Connect to Princeton OIT Server</span></a>. Make sure you are login as root.</p></li>
 <li><p>Enter the database docker container with the following command.</p>
@@ -448,6 +468,24 @@
 <li><p>Then upload the backup file to the chaos google drive folder. CHAOS Research -&gt; frost_server_backup</p></li>
 <li><p>You can then restore the database following these instructions <a href="https://chenkianwee.github.io/masa3db/docs/040/0411maintain.html" target="_blank">here</a></p></li>
 </ol>
+</div>
+<div class="section" id="server-down-docker-restart-issue">
+<h2><span class="section-number">18.2. </span>Server Down - Docker Restart Issue<a class="headerlink" href="#server-down-docker-restart-issue" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Make sure you are logged in as root. Then use this command to start Docker</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">docker</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start all the containers with the following command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">start</span> <span class="n">spatempdb</span>
+<span class="n">docker</span> <span class="n">start</span> <span class="n">frost</span>
+<span class="n">docker</span> <span class="n">start</span> <span class="n">grafana</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
