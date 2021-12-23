@@ -25,6 +25,8 @@ parts:
   - file: docs/020/0214task14
   - file: docs/020/0215task15
   - file: docs/020/0216task16
+  - file: docs/020/0217task17
+  - file: docs/020/0218task18
 - caption: Sub-Tasks
   numbered: true
   chapters:
