@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>29. Register Sensor and ObservedProperties to Our Database &#8212; Chaos Lab Data Manual</title>
+    <title>11. Register Sensor and ObservedProperties to Our Database &#8212; Chaos Lab Data Manual</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -37,245 +37,11 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -285,8 +51,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="30. Advance Analytics" href="0312advance_analytics.html" />
-    <link rel="prev" title="28. Connect Particle to Servicenet" href="0310particle_servicenet.html" />
+    <link rel="next" title="12. Advance Analytics" href="0312advance_analytics.html" />
+    <link rel="prev" title="10. Connect Particle to Servicenet" href="0310particle_servicenet.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -454,97 +220,97 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="0301connect_oit.html">
-   19. Connect to Princeton OIT Server
+   1. Connect to Princeton OIT Server
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0302chaosbox.html">
-   20. Connect to Chaosbox
+   2. Connect to Chaosbox
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0303install_docker.html">
-   21. Install Docker on OIT Server
+   3. Install Docker on OIT Server
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0304local_dimage.html">
-   22. Downloading Docker Image Locally
+   4. Downloading Docker Image Locally
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0305backup_influx.html">
-   23. Instructions to Backup Influxdb 1.2 (installed on chaosbox)
+   5. Instructions to Backup Influxdb 1.2 (installed on chaosbox)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0306restore_influx.html">
-   24. Restore data to InfluxDB 1.8
+   6. Restore data to InfluxDB 1.8
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0307access_influx.html">
-   25. Access InfluxDB
+   7. Access InfluxDB
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0308ssl_cert.html">
-   26. Request for SSL Certificate from Princeton
+   8. Request for SSL Certificate from Princeton
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0309mv_dockervar.html">
-   27. Move Docker Data Folder to /app Folder
+   9. Move Docker Data Folder to /app Folder
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0310particle_servicenet.html">
-   28. Connect Particle to Servicenet
+   10. Connect Particle to Servicenet
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   29. Register Sensor and ObservedProperties to Our Database
+   11. Register Sensor and ObservedProperties to Our Database
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0312advance_analytics.html">
-   30. Advance Analytics
+   12. Advance Analytics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0313del_thing.html">
-   31. Delete a Thing with Python
+   13. Delete a Thing with Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0314patch.html">
-   32. Patch a Datastream with Python
+   14. Patch a Datastream with Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0315huzzah.html">
-   33. Micropython on HUZZAH32
+   15. Micropython on HUZZAH32
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0316mpysecure.html">
-   34. Securing Passwords and codes - Micropython
+   16. Securing Passwords and codes - Micropython
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0317subtask17.html">
-   35. Getting started with WIO Terminal
+   17. Getting started with WIO Terminal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0318subtask18.html">
-   36. Register Particle Device
+   18. Register Particle Device
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="0319subtask19.html">
-   37. Visualise with Grafana
+   19. Visualise with Grafana
   </a>
  </li>
 </ul>
@@ -556,7 +322,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../040/influx_dbs.html">
-   38. Information on the databases in InfluxDB (Chaos Legacy DB)
+   1. Information on the databases in InfluxDB (Chaos Legacy DB)
   </a>
  </li>
 </ul>
@@ -648,12 +414,12 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#particle-web-ide">
-   29.1. Particle Web IDE
+   11.1. Particle Web IDE
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python">
-   29.2. Python
+   11.2. Python
   </a>
  </li>
 </ul>
@@ -668,16 +434,16 @@
               <div>
                 
   <div class="section" id="register-sensor-and-observedproperties-to-our-database">
-<h1><span class="section-number">29. </span>Register Sensor and ObservedProperties to Our Database<a class="headerlink" href="#register-sensor-and-observedproperties-to-our-database" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Register Sensor and ObservedProperties to Our Database<a class="headerlink" href="#register-sensor-and-observedproperties-to-our-database" title="Permalink to this headline">¶</a></h1>
 <p>There are many ways to post to our database as long as you can make a Post REST API request. In this document we will show two ways. 1) Using the Particle Web IDE, 2) Using Python Scripting.</p>
 <div class="section" id="particle-web-ide">
-<h2><span class="section-number">29.1. </span>Particle Web IDE<a class="headerlink" href="#particle-web-ide" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Particle Web IDE<a class="headerlink" href="#particle-web-ide" title="Permalink to this headline">¶</a></h2>
 <p>In this task we will use the Particle Web IDE to post a new sensor and observation properties to our database.</p>
 <ol>
 <li><p>Go to the Particle <a class="reference external" href="https://build.particle.io">Web IDE</a> and login with our CHAOS Lab credentials. Approach our lab memeber for the logins. In the Web IDE, go to Code -&gt; Search for STAPI -&gt; STAPI04_RegisterSensor.</p>
 <div class="figure align-default" id="reg-sensor">
 <a class="reference internal image-reference" href="../../_images/reg_sensor.png"><img alt="../../_images/reg_sensor.png" src="../../_images/reg_sensor.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29.1 </span><span class="caption-text">Register a new sensor with this script.</span><a class="headerlink" href="#reg-sensor" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.1 </span><span class="caption-text">Register a new sensor with this script.</span><a class="headerlink" href="#reg-sensor" title="Permalink to this image">¶</a></p>
 </div>
 <p>a. In this example, we are registering a DHT22 sensor. Here are the parameters for registering the sensor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;DHT22&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">sensor</span>
@@ -689,18 +455,18 @@
 <p>b. Flash the code to the Particle Device. The event page of the Particle Device will show this message if successfully registered.</p>
 <div class="figure align-default" id="reg-sensor2">
 <a class="reference internal image-reference" href="../../_images/reg_sensor2.png"><img alt="../../_images/reg_sensor2.png" src="../../_images/reg_sensor2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29.2 </span><span class="caption-text">Successful registration of a sensor.</span><a class="headerlink" href="#reg-sensor2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.2 </span><span class="caption-text">Successful registration of a sensor.</span><a class="headerlink" href="#reg-sensor2" title="Permalink to this image">¶</a></p>
 </div>
 <p>c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/Sensors</a> to get the details of the sensor. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
 <div class="figure align-default" id="reg-sensor3">
 <a class="reference internal image-reference" href="../../_images/reg_sensor3.png"><img alt="../../_images/reg_sensor3.png" src="../../_images/reg_sensor3.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29.3 </span><span class="caption-text">Details of the registered sensor.</span><a class="headerlink" href="#reg-sensor3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.3 </span><span class="caption-text">Details of the registered sensor.</span><a class="headerlink" href="#reg-sensor3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Similar to registering a new sensor. Registering a new ObservedProperties uses the script ‘STAPI05-RegisterObservedProp’.</p>
 <div class="figure align-default" id="reg-obsprop">
 <a class="reference internal image-reference" href="../../_images/reg_obsprop.png"><img alt="../../_images/reg_obsprop.png" src="../../_images/reg_obsprop.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29.4 </span><span class="caption-text">Register a new observation property with this script.</span><a class="headerlink" href="#reg-obsprop" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.4 </span><span class="caption-text">Register a new observation property with this script.</span><a class="headerlink" href="#reg-obsprop" title="Permalink to this image">¶</a></p>
 </div>
 <p>a. In this example, we are registering the property absolute humidity. Here are the parameters for registering the property.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Absolute Humidity&quot;</span><span class="p">;</span> <span class="o">//</span><span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">observed</span> <span class="n">properties</span>
@@ -713,13 +479,13 @@
 c. Go to <a class="reference external" href="https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties">https://andlchaos300l.princeton.edu:8080/FROST-Server/v1.0/ObservedProperties</a> to get the details of the property. Use Firefox for the best viewing result. Take not of the ID as that is what will be specified when posting data to the database.</p>
 <div class="figure align-default" id="reg-obsprop2">
 <a class="reference internal image-reference" href="../../_images/reg_obsprop2.png"><img alt="../../_images/reg_obsprop2.png" src="../../_images/reg_obsprop2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 29.5 </span><span class="caption-text">Details of the registered property.</span><a class="headerlink" href="#reg-obsprop2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.5 </span><span class="caption-text">Details of the registered property.</span><a class="headerlink" href="#reg-obsprop2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 </ol>
 </div>
 <div class="section" id="python">
-<h2><span class="section-number">29.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>This example assumes you know how to run a Python script.</strong></p></li>
 </ul>
@@ -782,7 +548,7 @@ a. For sensor fill in these parameters and run the script to post to the databas
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">28. </span>Connect Particle to Servicenet</p>
+                <p class="prevnext-title"><span class="section-number">10. </span>Connect Particle to Servicenet</p>
             </div>
         </a>
     </div>
@@ -790,7 +556,7 @@ a. For sensor fill in these parameters and run the script to post to the databas
         <a class="right-next" href="0312advance_analytics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">30. </span>Advance Analytics</p>
+                <p class="prevnext-title"><span class="section-number">12. </span>Advance Analytics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
