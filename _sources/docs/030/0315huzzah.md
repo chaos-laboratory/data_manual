@@ -10,7 +10,7 @@ This exercise assumes you are familiar with programming with Python and Anaconda
 
 1. Download and install the driver necessary to read and write from HUZZAH32 <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers" target="_blank">here</a>. In this exercise, I am using a Windows machine. However, the steps should work for the other OSes.
     - Connect the HUZZAH32 board to your computer. Go to Device Manager. You should be able to see under Ports (COM & LPT) - Silicon Labs CP210x USB to UART Brigdge (COMx). Remember the COM number 'COM4' in my case.
-      ```{figure} /_static/0315huzzah/comport.PNG
+      ```{figure} /_static/0315huzzah/comport.png
       :width: 50%
       :name: comport
       ```
@@ -42,11 +42,11 @@ This exercise assumes you are familiar with programming with Python and Anaconda
 7. With Micropython install on your board. We can write some codes with the Thonny IDE. Download the Thonny IDE <a href="https://thonny.org/" target="_blank">here</a>.
 
 8. In Thonny go to Tools -> Options -> Interpreter. In the 'Which interpreter or device should Thonny use for running your code?', choose Micropython (ESP32). In the 'Port or WebREPL', choose the COM your HUZZAH32 board is connected to.
-    ```{figure} /_static/0315huzzah/thonny.PNG
+    ```{figure} /_static/0315huzzah/thonny.png
     :width: 100%
     ```
     - Once chosen, the shell will show it is connected to the Micropython on the HUZZAH32.
-      ```{figure} /_static/0315huzzah/thonny2.PNG
+      ```{figure} /_static/0315huzzah/thonny2.png
       :width: 100%
       ```
 9. Connect to an existing WiFi network and enable webrepl interface. This will allow you to access the device through a local network.
@@ -79,12 +79,12 @@ This exercise assumes you are familiar with programming with Python and Anaconda
       ```
 
 10. Go to File -> Save as ... -> Micropython device. Save the script as main.py. The boot.py and main.py are executed at each startup of the board.
-    ```{figure} /_static/0315huzzah/thonny3.PNG
+    ```{figure} /_static/0315huzzah/thonny3.png
     :width: 100%
     ```
 
 11. Press the reset button on HUZZAH32. If your credentials for your Wifi network is correct, you will see the successful connection message.
-    ```{figure} /_static/0315huzzah/thonny4.PNG
+    ```{figure} /_static/0315huzzah/thonny4.png
     :width: 100%
     ```
 
@@ -93,7 +93,7 @@ This exercise assumes you are familiar with programming with Python and Anaconda
       ```
       import webrepl_setup
       ```
-      ```{figure} /_static/0315huzzah/thonny5.PNG
+      ```{figure} /_static/0315huzzah/thonny5.png
       :width: 100%
       ```
     - Check the boot.py file these two lines of code will be uncommented.
@@ -107,7 +107,7 @@ This exercise assumes you are familiar with programming with Python and Anaconda
       ```
       You will be prompted to enter the password you entered when setting up the webrepl. If successful you will be able to control the HUZZAH board as shown below. Remember to disconnect your board from the Thonny IDE. If not you will not be able to type in any commands in the webrepl.
 
-      ```{figure} /_static/0315huzzah/webrepl.PNG
+      ```{figure} /_static/0315huzzah/webrepl.png
       :width: 100%
       ```
 

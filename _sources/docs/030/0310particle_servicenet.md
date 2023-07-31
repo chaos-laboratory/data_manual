@@ -4,7 +4,7 @@
 
 2. Once installed, go to the terminal. Connect your Particle Device to your machine, hold on the mode for 3 seconds so that the LED blink blue. For windows machine, type 'cmd' in your seach bar and click on the command prompt. In the terminal, type in 'particle serial mac' to get the mac address. Make sure you are using a  data usb cable.
 
-    ```{figure} /_static/0310particle_servicenet/particle_mac.PNG
+    ```{figure} /_static/0310particle_servicenet/particle_mac.png
     :width: 100%
     :name: particle_mac
 
