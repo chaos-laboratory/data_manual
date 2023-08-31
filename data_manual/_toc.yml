@@ -27,6 +27,8 @@ parts:
   - file: docs/020/0216task16
   - file: docs/020/0217task17
   - file: docs/020/0218task18
+  - file: docs/020/0219task19
+  - file: docs/020/0220task20
 - caption: Sub-Tasks
   numbered: true
   chapters:
@@ -49,7 +51,6 @@ parts:
   - file: docs/030/0317subtask17
   - file: docs/030/0318subtask18
   - file: docs/030/0319subtask19
-  - file: docs/030/0320subtask20
 - caption: Appendix
   numbered: true
   chapters:
